@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=o2GUagUfJeA
 
 Création d'un nouveau projet.
 
-1- Ouvrir un terminal sous windows  
+1- Ouvrir un terminal sous windows
 2- S'assurer d'être au bon endroit pour créer le projet.  Faire Windows + R et dans écrire wl (pour Windows Terminal)  
 3- Un terminal sous windows va s'ouvrir.  
 4- Vous allez devoir copier le chemin ou vous voulez créer votre nouveau projet.  
@@ -18,6 +18,9 @@ Création d'un nouveau projet.
 
 6- npx create-expo-app GestionPlancherMobile -t       (-t permet de choisir un template)  choisir blank (TypeScript)
   
+1- Ouvrir un terminal sous windows
+2- S'assurer d'être au bon endroit pour créer le projet.  Faire Windows + R et dans écrire wl (pour Windows Terminal)
+3- Un terminal sous windows va s'ouvrir.
 
 7-
 
