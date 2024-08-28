@@ -4,8 +4,8 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Button title='Increment'></Button>
+      <Text>J'ai fait ma première app react native !</Text>
+      <Button title="Viens voir ce que j'ai réalisé" />
       <StatusBar style="auto" />
     </View>
   );
