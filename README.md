@@ -76,6 +76,12 @@ Solution:
 DevTools devrait s'ouvrir.  
 11.5 Aller sur le cellulaire et faire **CTRL + M** et sélectionner Reload. Le Devtools est enfin prêt.  
 
+12- Installation des packages spécifiques dans un projet React Native, chacun ayant des rôles particuliers pour la gestion de la navigation et l'amélioration des performances.
+► **npm install @react-navigation/native**  Installe la bibliothèque de base pour la navigation dans React Native.  
+► **npm install @react-navigation/native-stack**  Ajoute la navigation en pile pour gérer les transitions entre les écrans.  
+► **npm install react-native-screens react-native-safe-area-context**  Installe des outils pour améliorer les performances des écrans et gérer les zones sécurisées sur différents appareils.  
+
+
 **Recommmandation d'extensions pour Visual Studio Code**  
 À installer dans Visual Studio Code pour facilité et accélérer le développement avec React Native:    
 ► ES7+ React/Redux/React-Native snippets est une extension pour Visual Studio Code qui fournit des raccourcis clavier permettant de générer rapidement du code standard pour React, React Native, Redux, et JavaScript moderne.  
