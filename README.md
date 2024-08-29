@@ -2,13 +2,23 @@
 Voici les étapes du processus pour la création d'une application mobile React Native et de son environnement.
 
 Sources de tutoriels:  
+**Sources de tutoriels:**
+**==Sources de tutoriels:==**
+**Sources de tutoriels:** 🟨
+
 https://www.youtube.com/watch?v=gXrBpt9MLzE&t=11s  
 https://www.youtube.com/watch?v=o2GUagUfJeA
 
 Autres Sources:  
 Documentation de React Native pour la mise en place d'un environnement: https://reactnative.dev/docs/getting-started  
+Expo guides: https://docs.expo.dev/guides/overview/   
+Expo guide pour intaller les dependencies  https://docs.expo.dev/router/installation/#install-dependencies  
+► npx create-expo-app@latest  
+► npx expo start  
+► npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar  
 Design React Native Elements: https://reactnativeelements.com/docs  
 Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvMB5Jo  https://tailwindcss.com  
+
 
 Création d'un nouveau projet.  
 1- Ouvrir un terminal sous windows.  
@@ -69,9 +79,10 @@ Solution:
 DevTools devrait s'ouvrir.  
 11.5 Aller sur le cellulaire et faire CTRL + M et sélectionner Reload. Le Devtools est enfin prêt.  
 
-Recommmandation d'extensions à installe dans Visual Studio Code pour facilité et accélérer le développement avec React Native:    
+Recommmandation d'extensions à installer dans Visual Studio Code pour facilité et accélérer le développement avec React Native:    
 ► ES7+ React/Redux/React-Native snippets est une extension pour Visual Studio Code qui fournit des raccourcis clavier permettant de générer rapidement du code standard pour React, React Native, Redux, et JavaScript moderne.  
 exemple: rnfe + tab  
+  
 import React from 'react';  
 import { View, Text } from 'react-native';  
   
