@@ -69,3 +69,18 @@ Solution:
 DevTools devrait s'ouvrir.  
 11.5 Aller sur le cellulaire et faire CTRL + M et sélectionner Reload. Le Devtools est enfin prêt.  
 
+Recommmandation d'extensions à installe dans Visual Studio Code pour facilité et accélérer le développement avec React Native:    
+► ES7+ React/Redux/React-Native snippets est une extension pour Visual Studio Code qui fournit des raccourcis clavier permettant de générer rapidement du code standard pour React, React Native, Redux, et JavaScript moderne.  
+exemple: rnfe + tab  
+import React from 'react';  
+import { View, Text } from 'react-native';  
+  
+const MyComponent = () => {  
+  return (  
+    <View>  
+      <Text>MyComponent</Text>  
+    </View>  
+  );  
+};  
+
+export default MyComponent;  
