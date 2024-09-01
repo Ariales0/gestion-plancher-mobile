@@ -2,7 +2,6 @@ import { Button, View, Text , StyleSheet} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
-
 const Page2 = ({ navigation}) => {
   return (
     <View style={styles.container}>
