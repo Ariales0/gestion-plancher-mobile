@@ -13,6 +13,15 @@ const Login = ({ navigation }) => {
         <Text style={styles.item}>Réglages</Text>
         </TouchableOpacity>
       </View>
+
+      <View style={styles.horizontalContainer}>
+      
+      </View>
+      {/* Footer */}
+        <View style={styles.footer}>
+          <View style={styles.topbar}/>
+        <Text style={styles.footerText} >Version: 1.01</Text>
+      </View>
     </View>
   )
 }
@@ -33,6 +42,31 @@ const styles = StyleSheet.create({
     fontSize: 24, 
     marginHorizontal: 10, 
     color: 'blue',
+  },
+  footer: {
+    backgroundColor: '#C8C8C8',
+    height: 40,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    paddingHorizontal: 20,
+
+  },
+  topbar: {
+    height: 5,
+    backgroundColor: '#F78D1F',
+    width: '120%',
+    marginTop: -10,
+    marginBottom: 10,
+    marginRight: -20,
+  },
+  footerText: {
+    color: '#FFF',
+    fontSize: 18,
+    marginTop: -5,
   },
 });
 
