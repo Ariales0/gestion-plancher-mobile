@@ -12,7 +12,8 @@ const Stack = createNativeStackNavigator();
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Accueil">
+      
+      <Stack.Navigator /*screenOptions={{headerShown: false}}*/ initialRouteName="Accueil">
         <Stack.Screen name="Page1" component={Page1} options={{ title: 'Accueil' }} />
         <Stack.Screen name="Page2" component={Page2} options={{ title: 'Page 2' }} />
         <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />

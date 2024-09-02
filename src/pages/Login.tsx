@@ -29,7 +29,7 @@ const Login = ({ navigation }) => {
       </View>
 
       {/* Footer */}
-        <View style={styles.footer}>
+      <View style={styles.footer}>
           <View style={styles.topbar}/>
         <Text style={styles.footerText} >Version: 1.01</Text>
       </View>
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
   inputContainer:{
   },
   input: {
+    fontSize: 16,
     borderRadius: 5,
     borderWidth: 2,
     borderColor: '#e2e2e2',
@@ -85,10 +86,6 @@ const styles = StyleSheet.create({
     color: '#FFF',
     textAlign: 'center',
     fontSize: 18,
-  },
-  horizontalContainer: {
-    flexDirection: 'row', 
-    marginTop: 10, 
   },
   item: {
     fontSize: 24, 
