@@ -30,8 +30,10 @@ Markdown guide et la syntaxe de base (pour fichier readme): https://www.markdown
 | `npm run android` | Compile et lance l'application sur un émulateur Android ou un appareil connecté. |
 | `npm install --save-dev typescript@~5.3.3` | Installe la version spécifique de TypeScript recommandée pour la compatibilité avec Expo. |   
    
+
+
 ## **Création d'un nouveau projet.**  
-## Si vous avez déjà créé votre dossier pour le nouveau projet ou cloner un fichier de départ commencer à l'étape #6
+### Si vous avez déjà créé votre dossier pour le nouveau projet ou cloner un fichier de départ commencer à l'étape #6
 1- Ouvrir un terminal sous windows.  
 2- S'assurer d'être au bon endroit pour créer le projet.  Faire Windows + R et dans écrire wl (pour Windows Terminal).  
 3- Un terminal sous windows va s'ouvrir.  
@@ -70,15 +72,26 @@ React DevTools est un outil essentiel pour les développeurs React afin de facil
 npm install -g react-devtools
 ```
 
-10- Ensuite compiler et lancer l'application via la commande: npm run android  
+10- Ensuite compiler et lancer l'application via la commande:
+```bash
+npm run android  
+```   
 
 Si vous avez ce message c'Est que votre version de TypeScript n'est pas compatible avec la version de Expo:  
 The following packages should be updated for best compatibility with the installed expo version:  
   typescript@5.5.4 - expected version: ~5.3.3  
 Your project may not work correctly until you install the expected versions of the packages.  
 
-Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible avec Expo à l'aide de cette commande: **npm install --save-dev typescript@~5.3.3**  
-Vérifier que la version est correct: npx tsc --version  
+Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible avec Expo à l'aide de cette commande:
+```bash
+npm install --save-dev typescript@~5.3.3   
+```  
+    
+Vérifier que la version est correct: 
+```bash
+npx tsc --version   
+```
+     
 Redémarrer le Metro Bundler:
 ```bash
 npm run android
@@ -108,7 +121,8 @@ react-devtools
 
 DevTools devrait s'ouvrir.  
 11.5 Aller sur le cellulaire et faire **CTRL + M** et sélectionner Reload. Le Devtools est enfin prêt.  
-
+   
+##  ****
 12- Installation des packages spécifiques dans un projet React Native, chacun ayant des rôles particuliers pour la gestion de la **navigation** et l'amélioration des performances.  
 ► **npm install @react-navigation/native**  Installe la bibliothèque de base pour la navigation dans React Native.  
 ► **npm install @react-navigation/native-stack**  Ajoute la navigation en pile pour gérer les transitions entre les écrans.  
