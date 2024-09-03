@@ -50,8 +50,10 @@ Ce document décrit les étapes de la création d'une application mobile React N
 
 4. **Installer Expo si demandé.**
    - [Documentation Expo](https://docs.expo.dev/get-started/set-up-your-environment/?platform)
+   - [Start a new React Native project with Expo](https://reactnative.dev/docs/environment-setup)
 
-5. **Installer Android Studio pour émuler un appareil Android (optionnel).**
+5. **Installer Android Studio pour émuler un appareil Android (optionnel).**  
+  <small><i></i></small>
    - [Lien vers Android Studio](https://developer.android.com/studio?hl=fr)
 
 6. **Installer React DevTools.**
@@ -87,12 +89,28 @@ Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible 
    - Relancer l'application : 
      ```bash
      npm run android
-     ```
+     ```  
+     <small><i>Si vous êtes sur l'émulateur android possible de faire **CTRL + M** permet de voir plusieurs options (inspecteur d'éléments)</i><small>  
    - Lancer React DevTools : 
+      <small><i>React-DevTools permet d'inspecter et de déboguer la structure des composants React dans une application en temps réel.</i><small>  
      ```bash
      react-devtools
-     ```
-
+     ```  
+       
+       Si vous avez ce message react-devtools : Impossible de charger le fichier C:\Users\X\AppData\Roaming\npm\react-devtools.ps1. Le fichier (nom du fichier) n’est pas signé numériquement.  
+  
+        Explication de l'erreur: PowerShell a une stratégie d'exécution qui contrôle les types de scripts qui peuvent être exécutés. Par défaut, sur certaines machines, cette stratégie peut être définie sur Restricted ou RemoteSigned, ce qui empêche l'exécution de scripts non signés, comme celui de react-devtools.  
+        Documentation Microsoft: https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4   
+  
+        Solution:  
+        11.1 Lancer Windows PowerShell en tant qu'Administrateur.  
+        11.2 Vérifiez la stratégie actuelle : Tapez la commande suivante pour vérifier la stratégie d'exécution actuelle : Get-ExecutionPolicy  
+        11.3 Changez la stratégie d'exécution : Pour permettre l'exécution de scripts non signés (ce qui est généralement sûr pour les scripts locaux), tapez la commande suivante : Set-ExecutionPolicy RemoteSigned  
+        11.4 Relancer l'application React-DevTools via la commande:
+        ```bash
+        react-devtools
+        ```  
+  
 ## Installation de Packages pour la Navigation et l'Amélioration des Performances
 
 - **Navigation de base :**
