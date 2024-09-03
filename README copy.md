@@ -18,13 +18,13 @@ Ce document décrit les étapes de la création d'une application mobile React N
 
 | Commande                                                                                               | Description                                                                                                    |
 | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `npx create-expo-app gestion-plancher-mobile -t`                                                        | Crée un nouveau projet Expo avec un template TypeScript.                                                        |
-| `npx expo start`                                                                                        | Démarre le serveur de développement Expo.                                                                      |
-| `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar` | Installe les dépendances nécessaires pour le projet Expo.  |
-| `npm install react-native-vector-icons --save`                                                          | Installe les icônes vectorielles pour React Native.                                                             |
-| `npm install -g react-devtools`                                                                         | Installe React DevTools globalement pour le débogage des applications React.                                    |
-| `npm run android`                                                                                       | Compile et lance l'application sur un émulateur Android ou un appareil connecté.                                |
-| `npm install --save-dev typescript@~5.3.3`                                                              | Installe une version spécifique de TypeScript compatible avec Expo.                                             |
+| ```bash npx create-expo-app gestion-plancher-mobile -t ```                                                       | Crée un nouveau projet Expo avec un template TypeScript.                                                        |
+| ```bash npx expo start```                                                                                     | Démarre le serveur de développement Expo.                                                                      |
+| ```bash npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar``` | Installe les dépendances nécessaires pour le projet Expo.  |
+| ```bash npm install react-native-vector-icons --save```                                                         | Installe les icônes vectorielles pour React Native.                                                             |
+| ```bash npm install -g react-devtools```                                                                        | Installe React DevTools globalement pour le débogage des applications React.                                    |
+| ```bash npm run android```                                                                                      | Compile et lance l'application sur un émulateur Android ou un appareil connecté.                                |
+| ```bash npm install --save-dev typescript@~5.3.3```                                                              | Installe une version spécifique de TypeScript compatible avec Expo.                                             |
 
 ## Création d'un Nouveau Projet
 
@@ -35,7 +35,10 @@ Ce document décrit les étapes de la création d'une application mobile React N
    - Exemple de chemin : `C:\ecole\1-Informatique\Session 5\Programmation WEB avancée\Projet 2 - Native mobile-Schluter- 30% Équipe`
 
 3. **Créer un nouveau projet avec Expo.**
-   - Utiliser la commande : `npx create-expo-app gestion-plancher-mobile -t`  
+   - Utiliser la commande : 
+     ```bash
+     npx create-expo-app gestion-plancher-mobile -t 
+     ```  
    - Choisir `blank (TypeScript)` comme template.
 
 4. **Installer Expo si demandé.**
@@ -45,19 +48,37 @@ Ce document décrit les étapes de la création d'une application mobile React N
    - [Lien vers Android Studio](https://developer.android.com/studio?hl=fr)
 
 6. **Installer React DevTools.**
-   - Utiliser la commande : `npm install -g react-devtools`
+   - Utiliser la commande : 
+     ```bash
+     npm install -g react-devtools
+     ```
    - Si vous rencontrez des erreurs PowerShell, référez-vous à la [documentation Microsoft](https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4)
 
 7. **Lancer l'application sur Android.**
-   - Utiliser la commande : `npm run android`
+   - Utiliser la commande : 
+     ```bash
+     npm run android
+     ```
 
 8. **Configurer TypeScript pour la compatibilité avec Expo.**
-   - Utiliser la commande : `npm install --save-dev typescript@~5.3.3`
-   - Vérifier la version avec : `npx tsc --version`
+   - Utiliser la commande : 
+     ```bash
+     npm install --save-dev typescript@~5.3.3
+     ```
+   - Vérifier la version avec : 
+     ```bash
+     npx tsc --version
+     ```
 
 9. **Redémarrer le Metro Bundler et React DevTools.**
-   - Relancer l'application : `npm run android`
-   - Lancer React DevTools : `react-devtools`
+   - Relancer l'application : 
+     ```bash
+     npm run android
+     ```
+   - Lancer React DevTools : 
+     ```bash
+     react-devtools
+     ```
 
 ## Installation de Packages pour la Navigation et l'Amélioration des Performances
 
