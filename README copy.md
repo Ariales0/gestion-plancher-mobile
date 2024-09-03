@@ -9,6 +9,10 @@ Ce document décrit les étapes de la création d'une application mobile React N
 ## Autres Sources
 - [Documentation de React Native](https://reactnative.dev/docs/getting-started)
 - [Expo guides](https://docs.expo.dev/guides/overview/)
+► npx create-expo-app@latest  
+► npx expo start  
+► npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar  
+► npm install react-native-vector-icons --save  
 - [Installer les dépendances avec Expo](https://docs.expo.dev/router/installation/#install-dependencies)
 - [Design avec React Native Elements](https://reactnativeelements.com/docs)
 - [Créer des composants avec Tailwind CSS](https://www.youtube.com/watch?v=hAMVFvMB5Jo) - [Tailwind CSS Documentation](https://tailwindcss.com)
@@ -28,11 +32,12 @@ Ce document décrit les étapes de la création d'une application mobile React N
 
 ## Création d'un Nouveau Projet
 
-1. **Ouvrir un terminal sous Windows.**
-   - Faire Windows + R, taper `wl` (pour Windows Terminal).
+0. Si vous avez déjà créé votre dossier pour le nouveau projet ou cloner un fichier de départ commencer à l'étape #6 
+1. **Créer un nouveau projet avec Git :**
+   - [Documentation officielle de Git pour la création d'un dépôt local](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Initialiser-un-d%C3%A9p%C3%B4t)
 
-2. **Naviguer jusqu'au répertoire souhaité.**
-   - Exemple de chemin : `C:\ecole\1-Informatique\Session 5\Programmation WEB avancée\Projet 2 - Native mobile-Schluter- 30% Équipe`
+2. **Cloner un dépôt existant avec Git :**
+   - [Documentation officielle de Git pour cloner un dépôt](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Cloner-un-d%C3%A9p%C3%B4t)
 
 3. **Créer un nouveau projet avec Expo.**
    - Utiliser la commande : 
@@ -60,7 +65,13 @@ Ce document décrit les étapes de la création d'une application mobile React N
      npm run android
      ```
 
-8. **Configurer TypeScript pour la compatibilité avec Expo.**
+8. **Configurer TypeScript pour la compatibilité avec Expo.**  
+Si vous avez ce message c'Est que votre version de TypeScript n'est pas compatible avec la version de Expo:  
+The following packages should be updated for best compatibility with the installed expo version:  
+  typescript@5.5.4 - expected version: ~5.3.3  
+Your project may not work correctly until you install the expected versions of the packages.  
+
+Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible avec Expo à l'aide de cette commande:  
    - Utiliser la commande : 
      ```bash
      npm install --save-dev typescript@~5.3.3
