@@ -13,6 +13,7 @@ Expo guide pour installer les dependencies  https://docs.expo.dev/router/install
 ► npx create-expo-app@latest  
 ► npx expo start  
 ► npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar  
+► npm install react-native-vector-icons --save         
 Design React Native Elements: https://reactnativeelements.com/docs  
 Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvMB5Jo  https://tailwindcss.com  
 
