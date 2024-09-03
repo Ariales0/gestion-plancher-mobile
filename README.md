@@ -42,24 +42,21 @@ Markdown guide et la syntaxe de base (pour fichier readme): https://www.markdown
 5- Simplement taper dans le terminal votre chemin ainsi "nom du chemin"  
     cd "C:\ecole\1-Informatique\Session 5\Programmation WEB avancée\Projet 2 - Native mobile-Schluter- 30% Équipe\gestion-plancher-mobile"  
 
-6-  
+6- Création d'un nouveau projet    (-t permet de choisir un template)  **choisir blank (TypeScript)**      
 ```bash
 npx create-expo-app gestion-plancher-mobile -t
-```    
-(-t permet de choisir un template)  **choisir blank (TypeScript)**  
-
-
-
+```  
+  
 Possible que cette étape soit demandé pour utiliser expo-app. 
 expo-app fait partie de l'écosystème Expo, qui est un ensemble d'outils et de services destinés à simplifier le développement d'applications mobiles en utilisant React Native.  
 7- Installer expo-app. 
 Documentation Start a new React Native project with Expo https://reactnative.dev/docs/environment-setup  
 https://docs.expo.dev/get-started/set-up-your-environment/?platform 
 
-Étape 8: optionnelle si vous avez un téléphone cellulaire Android.  
+**Étape 8**: optionnelle si vous avez un téléphone cellulaire Android.  
 Simulateur pour android (recommandé par google pour le développement d'application Android)  
 
-8-Installer Android Studio: https://developer.android.com/studio?hl=fr  
+8-Installer **Android Studio**: https://developer.android.com/studio?hl=fr  
 8.1 Accepter les termines d'utilisation.  
 8.2 Lancer l'application Android Studio et cliquer sur More actions (au milieu) et Virtual Device Manager.  
 8.3 Au choix prendre le téléphone par default ou créer un nouveau appareil en cliquant sur + (Create Virtual Device) Next (noté l'API LEVEL).  
@@ -120,7 +117,7 @@ react-devtools
 ```   
 
 DevTools devrait s'ouvrir.  
-11.5 Aller sur le cellulaire et faire **CTRL + M** et sélectionner Reload. Le Devtools est enfin prêt.  
+11.5 Aller sur le cellulaire et faire **CTRL + M** et sélectionner **Reload**. Le Devtools est enfin prêt.  
    
 ##  ****
 12- Installation des packages spécifiques dans un projet React Native, chacun ayant des rôles particuliers pour la gestion de la **navigation** et l'amélioration des performances.  
