@@ -3,8 +3,8 @@
 Ce document décrit les étapes de la création d'une application mobile React Native, ainsi que la configuration de son environnement.
 
 ## Sources de tutoriels
-- [Tutoriel vidéo 1](https://www.youtube.com/watch?v=gXrBpt9MLzE)
-- [Tutoriel vidéo 2](https://www.youtube.com/watch?v=o2GUagUfJeA)
+- [Introduction à la création d'une application mobile avec React Native et Visual Studio Code](https://www.youtube.com/watch?v=gXrBpt9MLzE)
+- [Créer une App Mobile avec REACT NATIVE pour Débutant | Tutoriel React Native](https://www.youtube.com/watch?v=o2GUagUfJeA)
 
 ## Autres Sources
 - [Documentation de React Native](https://reactnative.dev/docs/getting-started)
@@ -127,3 +127,5 @@ Ce document décrit les étapes de la création d'une application mobile React N
 
      export default MyComponent;
      ```
+
+     ## Gestion des Authentification  
