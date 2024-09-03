@@ -29,7 +29,8 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
 
 6-  
 ```diff
-+ **npx create-expo-app gestion-plancher-mobile -t**       (-t permet de choisir un template)  **choisir blank (TypeScript)**  
++ **npx create-expo-app gestion-plancher-mobile -t**  
+### Conclusion       (-t permet de choisir un template)  **choisir blank (TypeScript)**  
 
 Possible que cette étape soit demandé pour utiliser expo-app. 
 expo-app fait partie de l'écosystème Expo, qui est un ensemble d'outils et de services destinés à simplifier le développement d'applications mobiles en utilisant React Native.  
