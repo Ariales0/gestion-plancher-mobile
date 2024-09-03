@@ -84,5 +84,46 @@ Ce document décrit les étapes de la création d'une application mobile React N
 
 - **Navigation de base :**
   ```bash
-  npm install @react-navigation/native
-  npm install @react-navigation/native-stack
+  npm install @react-navigation/native @react-navigation/native-stack
+  ```
+## **Améliorations des Performances :**
+
+### Étape 1 : Installation des packages pour les performances
+
+1. Ouvrez votre terminal.
+2. Assurez-vous d'être dans le répertoire de votre projet.
+3. Exécutez la commande suivante pour installer les packages nécessaires :
+   ```bash
+   npm install react-native-screens react-native-safe-area-context
+   ```
+
+## **Recommandations d'Extensions pour Visual Studio Code**
+
+### ES7+ React/Redux/React-Native snippets
+
+1. **Installation de l'extension :**
+   - Ouvrez Visual Studio Code.
+   - Accédez à la section des extensions (vous pouvez utiliser le raccourci `Ctrl+Shift+X` sur Windows ou `Cmd+Shift+X` sur macOS).
+   - Recherchez l'extension `ES7+ React/Redux/React-Native snippets`.
+   - Cliquez sur "Install" pour ajouter l'extension à votre éditeur.
+   
+2. **Description :**
+   - Cette extension permet de générer rapidement du code standard pour React, React Native, Redux, et JavaScript moderne.
+   
+3. **Exemple d'utilisation :**
+   - Une fois l'extension installée, tapez `rnfe` et appuyez sur `Tab` pour générer automatiquement un composant fonctionnel de base en React Native.
+   - Voici un exemple de code généré :
+     ```javascript
+     import React from 'react';
+     import { View, Text } from 'react-native';
+
+     const MyComponent = () => {
+       return (
+         <View>
+           <Text>MyComponent</Text>
+         </View>
+       );
+     };
+
+     export default MyComponent;
+     ```
