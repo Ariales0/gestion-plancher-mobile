@@ -1,12 +1,11 @@
 # GestionPlancherMobile
 Voici les étapes du processus pour la création d'une application mobile React Native et de son environnement.
 
-**Sources de tutoriels:**
-
+## **Sources de tutoriels:**
 https://www.youtube.com/watch?v=gXrBpt9MLzE&t=11s  
 https://www.youtube.com/watch?v=o2GUagUfJeA
 
-**Autres Sources:**  
+## **Autres Sources:**  
 Documentation de React Native pour la mise en place d'un environnement: https://reactnative.dev/docs/getting-started  
 Expo guides: https://docs.expo.dev/guides/overview/   
 Expo guide pour installer les dependencies  https://docs.expo.dev/router/installation/#install-dependencies  
@@ -18,7 +17,19 @@ Design React Native Elements: https://reactnativeelements.com/docs
 Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvMB5Jo  https://tailwindcss.com  
 
 
-**Création d'un nouveau projet.**  
+## **Création d'un nouveau projet.**  
+
+| Commande | Description |
+|----------|-------------|
+| `npx create-expo-app gestion-plancher-mobile -t` | Crée un nouveau projet Expo. Le flag `-t` permet de choisir un template. Choisir `blank (TypeScript)` pour commencer avec TypeScript. |
+| `npx expo start` | Démarre le serveur de développement Expo. |
+| `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar` | Installe les dépendances nécessaires pour le projet Expo. |
+| `npm install react-native-vector-icons --save` | Installe les icônes vectorielles pour React Native. |
+| `npm install -g react-devtools` | Installe React DevTools globalement pour le débogage des applications React. |
+| `npm run android` | Compile et lance l'application sur un émulateur Android ou un appareil connecté. |
+| `npm install --save-dev typescript@~5.3.3` | Installe la version spécifique de TypeScript recommandée pour la compatibilité avec Expo. |
+
+
 1- Ouvrir un terminal sous windows.  
 2- S'assurer d'être au bon endroit pour créer le projet.  Faire Windows + R et dans écrire wl (pour Windows Terminal).  
 3- Un terminal sous windows va s'ouvrir.  
@@ -52,7 +63,10 @@ Simulateur pour android (recommandé par google pour le développement d'applica
 9- Installer React devtools  
 Documentation React devtools: https://reactnative.dev/blog/2023/01/12/version-071#react-devtools  
 React DevTools est un outil essentiel pour les développeurs React afin de faciliter le débogage, l'optimisation et l'inspection des applications React. 
-9.1 Dans votre projet, ouvir le terminal et y inscrire cette commande: **npm install -g react-devtools**  
+9.1 Dans votre projet, ouvir le terminal et y inscrire cette commande:  
+```bash
+npm install -g react-devtools
+```
 
 10- Ensuite compiler et lancer l'application via la commande: npm run android  
 
