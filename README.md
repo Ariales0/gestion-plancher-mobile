@@ -28,7 +28,8 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
     cd "C:\ecole\1-Informatique\Session 5\Programmation WEB avancée\Projet 2 - Native mobile-Schluter- 30% Équipe\gestion-plancher-mobile"  
 
 6-  
-```**npx create-expo-app gestion-plancher-mobile -t**```     
+```bash
+**npx create-expo-app gestion-plancher-mobile -t**```     
 (-t permet de choisir un template)  **choisir blank (TypeScript)**  
 
 ```bash
