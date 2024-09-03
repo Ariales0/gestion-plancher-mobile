@@ -97,12 +97,12 @@ Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible 
      react-devtools
      ```  
        
-       Si vous avez ce message react-devtools : Impossible de charger le fichier C:\Users\X\AppData\Roaming\npm\react-devtools.ps1. Le fichier (nom du fichier) n’est pas signé numériquement.  
-  
+       <small><i>Si vous avez ce message react-devtools : Impossible de charger le fichier C:\Users\X\AppData\Roaming\npm\react-devtools.ps1. Le fichier (nom du fichier) n’est pas signé numériquement. </i><small>  
+          
         Explication de l'erreur: PowerShell a une stratégie d'exécution qui contrôle les types de scripts qui peuvent être exécutés. Par défaut, sur certaines machines, cette stratégie peut être définie sur Restricted ou RemoteSigned, ce qui empêche l'exécution de scripts non signés, comme celui de react-devtools.  
         Documentation Microsoft: https://learn.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4   
   
-        Solution:  
+        <u>Solution:</u>  
         11.1 Lancer Windows PowerShell en tant qu'Administrateur.  
         11.2 Vérifiez la stratégie actuelle : Tapez la commande suivante pour vérifier la stratégie d'exécution actuelle : Get-ExecutionPolicy  
         11.3 Changez la stratégie d'exécution : Pour permettre l'exécution de scripts non signés (ce qui est généralement sûr pour les scripts locaux), tapez la commande suivante : Set-ExecutionPolicy RemoteSigned  
