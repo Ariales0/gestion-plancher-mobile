@@ -159,4 +159,4 @@ Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible 
      export default MyComponent;
      ```
 
-     ## Gestion des Authentification  
+## Gestion des Authentification  
