@@ -18,7 +18,7 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
 Markdown guide et la syntaxe de base (pour fichier readme): https://www.markdownguide.org/basic-syntax/
 
 
-## **Commandes et description pour démarrer un project avec un environnement de base pour react native.**  
+## **Commandes et description pour démarrer un project avec un environnement de base pour react native**  
 
 | Commande | Description |
 |----------|-------------|
@@ -32,8 +32,9 @@ Markdown guide et la syntaxe de base (pour fichier readme): https://www.markdown
    
 
 
-## **Création d'un nouveau projet.**  
-### Si vous avez déjà créé votre dossier pour le nouveau projet ou cloner un fichier de départ commencer à l'étape #6
+## **Création d'un nouveau projet**  
+Si vous avez déjà créé votre dossier pour le nouveau projet ou cloner un fichier de départ commencer à l'étape #6  
+  
 1- Ouvrir un terminal sous windows.  
 2- S'assurer d'être au bon endroit pour créer le projet.  Faire Windows + R et dans écrire wl (pour Windows Terminal).  
 3- Un terminal sous windows va s'ouvrir.  
@@ -46,7 +47,8 @@ Markdown guide et la syntaxe de base (pour fichier readme): https://www.markdown
 ```bash
 npx create-expo-app gestion-plancher-mobile -t
 ```  
-  
+   
+   
 Possible que cette étape soit demandé pour utiliser expo-app. 
 expo-app fait partie de l'écosystème Expo, qui est un ensemble d'outils et de services destinés à simplifier le développement d'applications mobiles en utilisant React Native.  
 7- Installer expo-app. 
@@ -61,7 +63,7 @@ Simulateur pour android (recommandé par google pour le développement d'applica
 8.2 Lancer l'application Android Studio et cliquer sur More actions (au milieu) et Virtual Device Manager.  
 8.3 Au choix prendre le téléphone par default ou créer un nouveau appareil en cliquant sur + (Create Virtual Device) Next (noté l'API LEVEL).  
 
-9- Installer React devtools  
+9- Installer React devtools.    
 Documentation React devtools: https://reactnative.dev/blog/2023/01/12/version-071#react-devtools  
 React DevTools est un outil essentiel pour les développeurs React afin de faciliter le débogage, l'optimisation et l'inspection des applications React. 
 9.1 Dans votre projet, ouvir le terminal et y inscrire cette commande:  
