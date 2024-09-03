@@ -21,13 +21,13 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
 
 | Commande | Description |
 |----------|-------------|
-| ```bash<br>npx create-expo-app gestion-plancher-mobile -t<br>``` | Crée un nouveau projet Expo. Le flag `-t` permet de choisir un template. Choisir `blank (TypeScript)` pour commencer avec TypeScript. |
-| ```bash<br>npx expo start<br>``` | Démarre le serveur de développement Expo. |
-| ```bash<br>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar<br>``` | Installe les dépendances nécessaires pour le projet Expo. |
-| ```bash<br>npm install react-native-vector-icons --save<br>``` | Installe les icônes vectorielles pour React Native. |
-| ```bash<br>npm install -g react-devtools<br>``` | Installe React DevTools globalement pour le débogage des applications React. |
-| ```bash<br>npm run android<br>``` | Compile et lance l'application sur un émulateur Android ou un appareil connecté. |
-| ```bash<br>npm install --save-dev typescript@~5.3.3<br>``` | Installe la version spécifique de TypeScript recommandée pour la compatibilité avec Expo. |
+| `npx create-expo-app gestion-plancher-mobile -t` | Crée un nouveau projet Expo. Le flag `-t` permet de choisir un template. Choisir `blank (TypeScript)` pour commencer avec TypeScript. |
+| `npx expo start` | Démarre le serveur de développement Expo. |
+| `npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar` | Installe les dépendances nécessaires pour le projet Expo. |
+| `npm install react-native-vector-icons --save` | Installe les icônes vectorielles pour React Native. |
+| `npm install -g react-devtools` | Installe React DevTools globalement pour le débogage des applications React. |
+| `npm run android` | Compile et lance l'application sur un émulateur Android ou un appareil connecté. |
+| `npm install --save-dev typescript@~5.3.3` | Installe la version spécifique de TypeScript recommandée pour la compatibilité avec Expo. |
 
 
 1- Ouvrir un terminal sous windows.  
