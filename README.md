@@ -21,7 +21,7 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
 
 | Commande | Description |
 |----------|-------------|
-| ```bash npx create-expo-app gestion-plancher-mobile -t``` | Crée un nouveau projet Expo. Le flag `-t` permet de choisir un template. Choisir `blank (TypeScript)` pour commencer avec TypeScript. |
+| ```bash<br>npx create-expo-app gestion-plancher-mobile -t<br>``` | Crée un nouveau projet Expo. Le flag `-t` permet de choisir un template. Choisir `blank (TypeScript)` pour commencer avec TypeScript. |
 | ```bash<br>npx expo start<br>``` | Démarre le serveur de développement Expo. |
 | ```bash<br>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar<br>``` | Installe les dépendances nécessaires pour le projet Expo. |
 | ```bash<br>npm install react-native-vector-icons --save<br>``` | Installe les icônes vectorielles pour React Native. |
