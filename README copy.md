@@ -8,7 +8,7 @@ Ce document décrit les étapes de la création d'une application mobile React N
 
 ## Autres Sources
 - [Documentation de React Native](https://reactnative.dev/docs/getting-started)
-- [Expo guides](https://docs.expo.dev/guides/overview/)
+- [Expo guides](https://docs.expo.dev/guides/overview/)  
 ► npx create-expo-app@latest  
 ► npx expo start  
 ► npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar  
@@ -39,7 +39,9 @@ Ce document décrit les étapes de la création d'une application mobile React N
 2. **Cloner un dépôt existant avec Git :**
    - [Documentation officielle de Git pour cloner un dépôt](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Cloner-un-d%C3%A9p%C3%B4t)
 
-3. **Créer un nouveau projet avec Expo.**
+3. **Créer un nouveau projet avec Expo.**  
+  <small><i>Possible que cette étape soit demandée pour utiliser expo-app. expo-app fait partie de l'écosystème Expo, qui est un ensemble d'outils et de services destinés à simplifier le développement d'applications mobiles en utilisant React Native.</i></small>  
+
    - Utiliser la commande : 
      ```bash
      npx create-expo-app gestion-plancher-mobile -t 
