@@ -15,9 +15,10 @@ Expo guide pour installer les dependencies  https://docs.expo.dev/router/install
 ► npm install react-native-vector-icons --save         
 Design React Native Elements: https://reactnativeelements.com/docs  
 Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvMB5Jo  https://tailwindcss.com  
+Markdown guide et la syntaxe de base (pour fichier readme): https://www.markdownguide.org/basic-syntax/
 
 
-## **Création d'un nouveau projet.**  
+## **Commandes et description pour démarrer un project avec un environnement de base pour react native.**  
 
 | Commande | Description |
 |----------|-------------|
@@ -27,9 +28,10 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
 | `npm install react-native-vector-icons --save` | Installe les icônes vectorielles pour React Native. |
 | `npm install -g react-devtools` | Installe React DevTools globalement pour le débogage des applications React. |
 | `npm run android` | Compile et lance l'application sur un émulateur Android ou un appareil connecté. |
-| `npm install --save-dev typescript@~5.3.3` | Installe la version spécifique de TypeScript recommandée pour la compatibilité avec Expo. |
-
-
+| `npm install --save-dev typescript@~5.3.3` | Installe la version spécifique de TypeScript recommandée pour la compatibilité avec Expo. |   
+   
+## **Création d'un nouveau projet.**  
+## Si vous avez déjà créé votre dossier pour le nouveau projet ou cloner un fichier de départ commencer à l'étape #6
 1- Ouvrir un terminal sous windows.  
 2- S'assurer d'être au bon endroit pour créer le projet.  Faire Windows + R et dans écrire wl (pour Windows Terminal).  
 3- Un terminal sous windows va s'ouvrir.  
