@@ -29,11 +29,9 @@ Créer des composants avec Tailwind CSS: https://www.youtube.com/watch?v=hAMVFvM
 
 6-  
 ```bash
-**npx create-expo-app gestion-plancher-mobile -t**```     
+**npx create-expo-app gestion-plancher-mobile -t**    
 (-t permet de choisir un template)  **choisir blank (TypeScript)**  
-
-```bash
-npx create-expo-app gestion-plancher-mobile -t
+``` 
 
 
 Possible que cette étape soit demandé pour utiliser expo-app. 
