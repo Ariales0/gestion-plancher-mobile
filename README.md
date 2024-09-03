@@ -77,12 +77,18 @@ Your project may not work correctly until you install the expected versions of t
 
 Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible avec Expo à l'aide de cette commande: **npm install --save-dev typescript@~5.3.3**  
 Vérifier que la version est correct: npx tsc --version  
-Redémarrer le Metro Bundler: **npm run android**  
+Redémarrer le Metro Bundler:
+```bash
+npm run android
+```
 
 Si vous êtes sur l'émulateur android possible de faire **CTRL + M** permet de voir plusieurs options (inspecteur d'éléments)  
 
 React-DevTools permet d'inspecter et de déboguer la structure des composants React dans une application en temps réel.  
-11-Lancer React-DevTools via la commande: **react-devtools**  
+11-Lancer React-DevTools via la commande:
+```bash
+react-devtools
+```
 
 Si vous avez ce message react-devtools : Impossible de charger le fichier C:\Users\X\AppData\Roaming\npm\react-devtools.ps1. Le fichier (nom du fichier) n’est pas signé numériquement.  
 
@@ -93,21 +99,28 @@ Solution:
 11.1 Lancer Windows PowerShell en tant qu'Administrateur.  
 11.2 Vérifiez la stratégie actuelle : Tapez la commande suivante pour vérifier la stratégie d'exécution actuelle : Get-ExecutionPolicy  
 11.3 Changez la stratégie d'exécution : Pour permettre l'exécution de scripts non signés (ce qui est généralement sûr pour les scripts locaux), tapez la commande suivante : Set-ExecutionPolicy RemoteSigned  
-11.4 Relancer l'application React-DevTools via la commande: **react-devtools**  
+11.4 Relancer l'application React-DevTools via la commande:
+```bash
+react-devtools
+```   
+
 DevTools devrait s'ouvrir.  
 11.5 Aller sur le cellulaire et faire **CTRL + M** et sélectionner Reload. Le Devtools est enfin prêt.  
 
-12- Installation des packages spécifiques dans un projet React Native, chacun ayant des rôles particuliers pour la gestion de la **navigation** et l'amélioration des performances.
+12- Installation des packages spécifiques dans un projet React Native, chacun ayant des rôles particuliers pour la gestion de la **navigation** et l'amélioration des performances.  
 ► **npm install @react-navigation/native**  Installe la bibliothèque de base pour la navigation dans React Native.  
 ► **npm install @react-navigation/native-stack**  Ajoute la navigation en pile pour gérer les transitions entre les écrans.  
 ► **npm install react-native-screens react-native-safe-area-context**  Installe des outils pour améliorer les performances des écrans et gérer les zones sécurisées sur différents appareils.  
 
 
-**Recommmandation d'extensions pour Visual Studio Code**  
+## **Recommmandation d'extensions pour Visual Studio Code**  
 À installer dans Visual Studio Code pour facilité et accélérer le développement avec React Native:    
 ► ES7+ React/Redux/React-Native snippets est une extension pour Visual Studio Code qui fournit des raccourcis clavier permettant de générer rapidement du code standard pour React, React Native, Redux, et JavaScript moderne.  
 exemple: **rnfe + tab**  
-  
+```bash
+rnfe
+```   
+
 import React from 'react';  
 import { View, Text } from 'react-native';  
   
@@ -121,4 +134,4 @@ const MyComponent = () => {
 
 export default MyComponent;  
 
-# Gestion des Authentification  
+## Gestion des Authentification  
