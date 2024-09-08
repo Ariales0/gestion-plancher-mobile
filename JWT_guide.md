@@ -8,7 +8,14 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 3. [Utilisation des JWT](#utilisation-des-jwt)
 4. [Sécurité des JWT](#sécurité-des-jwt)
 5. [Exemple pratique](#exemple-pratique)
-6. [Conclusion](#conclusion)
+6. [Exemples de Signatures JWT et Leur Description](#exemples-de-signatures-jwt-et-leur-description)
+7. [Exemples de Claims JWT et Leur Description](#exemples-de-claims-jwt-et-leur-description)
+8. [Exemples de Claims JWT Publics](#exemples-de-claims-jwt-publics)
+9. [Exemples de Claims JWT Privés](#exemples-de-claims-jwt-privés)
+10. [Erreurs Courantes avec les JWT](#erreurs-courantes-avec-les-jwt)
+11. [Meilleures Pratiques pour les JWT](#meilleures-pratiques-pour-les-jwt)
+12. [Conclusion](#conclusion)
+13. [Sources](#sources)
 
 ---
 
@@ -59,15 +66,8 @@ console.log(token);
 Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé de données, mais ils doivent être utilisés avec prudence pour éviter des failles de sécurité. Prenez soin de toujours protéger vos tokens et de suivre les meilleures pratiques en matière de sécurité.  
 [JWT Security Best Practices - Auth0](https://auth0.com/docs/secure/tokens/token-best-practices)
 
-## Sources
 
-- https://www.youtube.com/watch?v=5qNfPBcogCs
-- https://www.atatus.com/blog/jwt-authentication-when-and-how-to-use-it/
-- [](https://medium.com/@adesinabolaji/fundamentals-of-jwt-json-web-token-bafb2cfbd159)
-- https://jwt.io/introduction
-- https://redis.io/blog/json-web-tokens-jwt-are-dangerous-for-user-sessions/
-
-## Tableau
+## Tableaux
 
 ### Exemples de Signatures JWT et Leur Description
 
@@ -96,3 +96,49 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 | `iat`            | **Issued At** : Spécifie la date et l'heure à laquelle le jeton a été émis.                                |
 | `jti`            | **JWT ID** : Identifiant unique pour le jeton, souvent utilisé pour éviter les rejets de jetons.           |
 | `aud`            | **Audience** : Spécifie le ou les destinataires pour lesquels le jeton est destiné.                        |
+
+### Exemples de Claims JWT Publics
+
+| **Claim JWT**    | **Description**                                                                                           |
+|------------------|-----------------------------------------------------------------------------------------------------------|
+| `email`          | Adresse e-mail de l'utilisateur.                                                                         |
+| `username`       | Nom d'utilisateur.                                                                                       |
+| `role`           | Rôle ou privilèges de l'utilisateur (par exemple, "admin", "user").                                        |
+| `name`           | Nom complet de l'utilisateur.                                                                            |
+| `scope`          | Portée ou les permissions accordées par le jeton.                                                        |
+
+### Exemples de Claims JWT Privés
+
+| **Claim JWT**    | **Description**                                                                                           |
+|------------------|-----------------------------------------------------------------------------------------------------------|
+| `user_id`        | Identifiant unique de l'utilisateur dans votre base de données.                                          |
+| `department`     | Département ou section de l'organisation à laquelle l'utilisateur appartient.                             |
+| `custom_claim`   | Toute autre donnée personnalisée ajoutée au jeton en fonction des besoins spécifiques de l'application. |
+
+### Erreurs Courantes avec les JWT
+
+| **Erreur**                       | **Description**                                                                                           |
+|----------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `Invalid Token`                  | Le jeton est invalide ou malformé.                                                                        |
+| `Token Expired`                  | Le jeton a expiré et n'est plus valide.                                                                   |
+| `Token Not Yet Valid`            | Le jeton est utilisé avant sa date de validité.                                                           |
+| `Signature Verification Failed`  | La signature du jeton ne correspond pas, indiquant une possible falsification ou une clé incorrecte.      |
+| `Missing Claim`                  | Un claim requis est absent dans le jeton.                                                                 |
+
+### Meilleures Pratiques pour les JWT
+
+| **Pratique**                     | **Description**                                                                                           |
+|----------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Utiliser HTTPS**               | Toujours utiliser HTTPS pour transmettre les JWT afin de protéger les données en transit.                 |
+| **Expiration**                   | Définir une date d'expiration appropriée pour les jetons afin de limiter leur durée de validité.          |
+| **Rotation des Clés**            | Régulièrement faire tourner les clés de signature pour améliorer la sécurité.                             |
+| **Validation des Claims**        | Toujours valider les claims du JWT (comme `exp`, `nbf`, `aud`) pour s'assurer de leur légitimité.          |
+| **Utiliser des Algorithmes Sécurisés** | Choisir des algorithmes de signature sécurisés comme RS256 ou ES256 au lieu de `none`.                   |
+
+## Sources
+
+- https://www.youtube.com/watch?v=5qNfPBcogCs
+- https://www.atatus.com/blog/jwt-authentication-when-and-how-to-use-it/
+- https://medium.com/@adesinabolaji/fundamentals-of-jwt-json-web-token-bafb2cfbd159
+- https://jwt.io/introduction
+- https://redis.io/blog/json-web-tokens-jwt-are-dangerous-for-user-sessions/
