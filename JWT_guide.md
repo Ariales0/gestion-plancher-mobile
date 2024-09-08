@@ -59,3 +59,40 @@ console.log(token);
 Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé de données, mais ils doivent être utilisés avec prudence pour éviter des failles de sécurité. Prenez soin de toujours protéger vos tokens et de suivre les meilleures pratiques en matière de sécurité.  
 [JWT Security Best Practices - Auth0](https://auth0.com/docs/secure/tokens/token-best-practices)
 
+## Sources
+
+- https://www.youtube.com/watch?v=5qNfPBcogCs
+- https://www.atatus.com/blog/jwt-authentication-when-and-how-to-use-it/
+- [](https://medium.com/@adesinabolaji/fundamentals-of-jwt-json-web-token-bafb2cfbd159)
+- https://jwt.io/introduction
+- https://redis.io/blog/json-web-tokens-jwt-are-dangerous-for-user-sessions/
+
+## Tableau
+
+### Exemples de Signatures JWT et Leur Description
+
+| **Exemple de Signature JWT**        | **Description**                                                                                          |
+|-------------------------------------|----------------------------------------------------------------------------------------------------------|
+| `HS256`                             | HMAC avec SHA-256, un algorithme de hachage symétrique utilisé pour la signature.                        |
+| `RS256`                             | RSA avec SHA-256, un algorithme de hachage asymétrique qui utilise une paire de clés publique et privée. |
+| `ES256`                             | ECDSA avec SHA-256, une signature numérique basée sur la cryptographie elliptique.                       |
+| `PS256`                             | RSA-PSS avec SHA-256, une variante de RSA pour des signatures plus sécurisées.                          |
+| `EdDSA`                             | Utilise les courbes de Edwards pour des signatures rapides et sécurisées, souvent `Ed25519`.              |
+| `none`                              | Pas de signature, utilisé pour les JWT non signés, généralement déconseillé pour la sécurité.            |
+
+
+### Exemples de Claims JWT et Leur Description
+
+| **Claim JWT**    | **Description**                                                                                           |
+|------------------|-----------------------------------------------------------------------------------------------------------|
+| `alg`            | **Algorithm** : Spécifie l'algorithme de signature utilisé pour le JWT (par exemple, HS256, RS256).       |
+| `cty`            | **Content Type** : Indique le type de contenu du JWT, souvent utilisé pour préciser le type du payload.    |
+| `typ`            | **Type** : Spécifie le type de jeton, par exemple "JWT" pour un JSON Web Token.                           |
+| `kid`            | **Key ID** : Identifiant de la clé utilisée pour signer le jeton, utile pour gérer plusieurs clés.         |
+| `iss`            | **Issuer** : Identifie l'émetteur du jeton.                                                               |
+| `sub`            | **Subject** : Identifie le sujet du jeton, souvent l'utilisateur ou l'entité à laquelle le jeton se réfère.|
+| `exp`            | **Expires At** : Spécifie la date et l'heure d'expiration du jeton, après laquelle il ne sera plus valide.  |
+| `nbf`            | **Not Before** : Spécifie la date et l'heure avant laquelle le jeton ne devrait pas être accepté.          |
+| `iat`            | **Issued At** : Spécifie la date et l'heure à laquelle le jeton a été émis.                                |
+| `jti`            | **JWT ID** : Identifiant unique pour le jeton, souvent utilisé pour éviter les rejets de jetons.           |
+| `aud`            | **Audience** : Spécifie le ou les destinataires pour lesquels le jeton est destiné.                        |
