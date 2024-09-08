@@ -27,7 +27,8 @@ Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission
 Cas d'Utilisation : Les JWT sont largement utilisés dans divers scénarios, notamment :  
 
 - Authentification d'API : Permet aux clients de se connecter à un serveur et d'accéder aux ressources protégées sans avoir à se réauthentifier à chaque demande.
-- Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services._Stateless : Pas besoin de stocker les sessions sur le serveur._  
+- Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services.  
+  _Stateless : Pas besoin de stocker les sessions sur le serveur._  
 
 - Échange de Données : Transfert sécurisé de données entre différentes parties ou systèmes.  
 
