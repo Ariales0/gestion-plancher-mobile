@@ -31,26 +31,38 @@ Voici un exemple de JWT :
 
 
 
-## Utilisation des JWT
+## Utilisation des JWT  
+  
+Les JWT sont souvent utilisés pour :
+- **Authentification** : Ils permettent à un utilisateur de se connecter une fois et de continuer à accéder aux ressources sans avoir à se reconnecter à chaque requête.
+- **Échange d'information sécurisé** : Le contenu d'un JWT peut être signé et éventuellement chiffré.
 
 
 ![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/jwt-workflow.png)
 
 ## Sécurité des JWT
-
+  
+Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :
+- **Ne stockez jamais de JWT sensibles dans le stockage local du navigateur**.
+- **Utilisez HTTPS** pour sécuriser la transmission des JWT.
+- **Revocation** : Assurez-vous d'avoir un mécanisme pour révoquer les tokens si nécessaire.
 
 
 
 
 
 ## Exemple pratique
+  
+  Voici comment générer un JWT en utilisant la bibliothèque `jsonwebtoken` en Node.js :
 
-
+```javascript
+const jwt = require('jsonwebtoken');
+const token = jwt.sign({ userId: 123 }, 'secret_key', { expiresIn: '1h' });
+console.log(token);
 ![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg)
-## Exemple pratique
-
-<img src="https://github.com/Ariales0/gestion-plancher-mobile/raw/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg" alt="Fonctionnement" width="50%"/>
 
 
 ## Conclusion
-
+  
+Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé de données, mais ils doivent être utilisés avec prudence pour éviter des failles de sécurité. Prenez soin de toujours protéger vos tokens et de suivre les meilleures pratiques en matière de sécurité.
+![JWT Security Best Practices - Auth0](https://auth0.com/docs/secure/tokens/token-best-practices)
