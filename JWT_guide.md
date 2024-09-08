@@ -39,7 +39,7 @@ Les JWT sont souvent utilisés pour :
 ## Sécurité des JWT
   
 Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :
-- **Ne stockez jamais de JWT sensibles dans le stockage local du navigateur**.
+  - **Ne stockez jamais de JWT sensibles dans le stockage local du navigateur**.
 - **Utilisez HTTPS** pour sécuriser la transmission des JWT.
 - **Invalider les tokens** : Assurez-vous d'avoir un mécanisme pour invalider les tokens si nécessaire.
 
@@ -58,3 +58,4 @@ console.log(token);
   
 Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé de données, mais ils doivent être utilisés avec prudence pour éviter des failles de sécurité. Prenez soin de toujours protéger vos tokens et de suivre les meilleures pratiques en matière de sécurité.
 [JWT Security Best Practices - Auth0](https://auth0.com/docs/secure/tokens/token-best-practices)
+
