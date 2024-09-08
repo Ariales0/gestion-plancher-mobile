@@ -19,10 +19,12 @@ Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission
 ## Structure d'un JWT
 
 Un JWT est composé de trois parties séparées par des points :
-1. **Header** : Contient le type de token (JWT) et l'algorithme de signature.
-2. **Payload** : Contient les revendications (claims), c'est-à-dire les informations à transmettre.
-3. **Signature** : Vérifie que le contenu n'a pas été altéré.  
-![Structure du JWT](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/Structured'un%20JWL.png)
+1. **Header** : Contient le type (typ) de token (JWT) et l'algorithme de signature (alg).
+2. **Payload** : Contient les revendications (claims) document Json, c'est-à-dire les informations à transmettre.  
+    C'est l'en ou est précisé les dates de création et d'expiration du token.  
+    (exp = expiration en timestamp  exemple:  "exp": 1647807974)  
+3. **Signature** : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connait.    
+![Structure du JWT](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/Structured'un%20JWL.png)  
 
 Voici un exemple de JWT :
 
