@@ -10,8 +10,8 @@ Ce document décrit les étapes de la création d'une application mobile React N
 4. [Installation de Packages pour la Navigation et l'Amélioration des Performances](#installation-de-packages-pour-la-navigation-et-lam%C3%A9lioration-des-performances)
 5. [Recommandations d'Extensions pour Visual Studio Code](#recommandations-dextensions-pour-visual-studio-code)
 6. [Gestion de l'Authentification](#gestion-de-lauthentification)
-7. [Sources de tutoriels démarrer un Projet React Native](#sources-de-tutoriels-démarrer-un-Projet-React-Native)
-8. [Autres Sources démarrer un Projet React Native](#autres-sources-démarrer-un-Projet-React-Native)
+7. [Sources de tutoriels: Démarrer un Projet React Native](#sources-de-tutoriels-démarrer-un-Projet-React-Native)
+8. [Autres Sources: Démarrer un Projet React Native](#autres-sources-démarrer-un-Projet-React-Native)
 
 
 ## Commandes et Description pour Démarrer un Projet React Native
