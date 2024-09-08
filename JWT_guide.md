@@ -27,7 +27,8 @@ Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission
 Cas d'Utilisation : Les JWT sont largement utilisés dans divers scénarios, notamment :  
 
 - Authentification d'API : Permet aux clients de se connecter à un serveur et d'accéder aux ressources protégées sans avoir à se réauthentifier à chaque demande.
-- Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services.
+- Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services._Stateless : Pas besoin de stocker les sessions sur le serveur._  
+
 - Échange de Données : Transfert sécurisé de données entre différentes parties ou systèmes.  
 
 ## Structure d'un JWT
@@ -55,7 +56,6 @@ Les JWT sont souvent utilisés pour :
 ## Sécurité des JWT
 
 Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :  
-_Stateless : Pas besoin de stocker les sessions sur le serveur._  
 
 - **Stockage Sécurisé des Clés** : Utilisez des systèmes de gestion des secrets ou des environnements sécurisés pour stocker les clés secrètes utilisées pour signer les JWT.
 - **Rotation des Clés** : Mettez en place une stratégie de rotation régulière des clés pour minimiser le risque d'exposition en cas de compromission.
