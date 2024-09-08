@@ -154,6 +154,9 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 | **Validation des Claims**        | Toujours valider les claims du JWT (comme `exp`, `nbf`, `aud`) pour s'assurer de leur légitimité.          |
 | **Utiliser des Algorithmes Sécurisés** | Choisir des algorithmes de signature sécurisés comme RS256 ou ES256 au lieu de `none`.                   |
 
+## 
+
+
 ## Sources
 
 - https://www.youtube.com/watch?v=5qNfPBcogCs
