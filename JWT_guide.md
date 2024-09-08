@@ -57,6 +57,7 @@ Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement
 const jwt = require('jsonwebtoken');
 const token = jwt.sign({ userId: 123 }, 'secret_key', { expiresIn: '1h' });
 console.log(token);
+```
 ![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg)
 ```
 
