@@ -17,6 +17,24 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 12. [Conclusion](#conclusion)
 13. [Sources](#sources)
 
+<div style="display: flex; justify-content: space-between;">
+    <div style="width: 45%;">
+        <ul>
+            <li><a href="#introduction-aux-jwt">Introduction aux JWT</a></li>
+            <li><a href="#structure-dun-jwt">Structure d'un JWT</a></li>
+            <li><a href="#utilisation-des-jwt">Utilisation des JWT</a></li>
+        </ul>
+    </div>
+    <div style="width: 45%;">
+        <ul>
+            <li><a href="#sécurité-des-jwt">Sécurité des JWT</a></li>
+            <li><a href="#exemple-pratique">Exemple pratique</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </div>
+</div>
+
+
 ---
 
 ## Introduction aux JWT
