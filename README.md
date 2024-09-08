@@ -106,9 +106,9 @@ Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible 
         11.1 Lancer Windows PowerShell en tant qu'Administrateur.  
         11.2 Vérifiez la stratégie actuelle : Tapez la commande suivante pour vérifier la stratégie d'exécution actuelle : Get-ExecutionPolicy  
         11.3 Changez la stratégie d'exécution : Pour permettre l'exécution de scripts non signés (ce qui est généralement sûr pour les scripts locaux), tapez la commande suivante :   
-        '''bash
+        ```bash
         Set-ExecutionPolicy RemoteSigned
-        '''   
+        ```      
         11.4 Relancer l'application React-DevTools via la commande:
         ```bash
         react-devtools
