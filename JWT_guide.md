@@ -26,10 +26,6 @@ Un JWT est composé de trois parties séparées par des points :
 3. **Signature** : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connaît.    
 ![Structure du JWT](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/Structured'un%20JWL.png)  
 
-Voici un exemple de JWT :
-
-
-
 
 ## Utilisation des JWT  
   
@@ -37,8 +33,8 @@ Les JWT sont souvent utilisés pour :
 - **Authentification** : Ils permettent à un utilisateur de se connecter une fois et de continuer à accéder aux ressources sans avoir à se reconnecter à chaque requête.
 - **Échange d'information sécurisé** : Le contenu d'un JWT peut être signé et éventuellement chiffré.
 
-
 ![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/jwt-workflow.png)
+
 
 ## Sécurité des JWT
   
@@ -46,9 +42,6 @@ Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement
 - **Ne stockez jamais de JWT sensibles dans le stockage local du navigateur**.
 - **Utilisez HTTPS** pour sécuriser la transmission des JWT.
 - **Revocation** : Assurez-vous d'avoir un mécanisme pour révoquer les tokens si nécessaire.
-
-
-
 
 
 ## Exemple pratique
