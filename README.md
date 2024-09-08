@@ -2,21 +2,17 @@
 
 Ce document décrit les étapes de la création d'une application mobile React Native, ainsi que la configuration de son environnement.
 
-## Sources de tutoriels
-- [Introduction à la création d'une application mobile avec React Native et Visual Studio Code](https://www.youtube.com/watch?v=gXrBpt9MLzE)
-- [Créer une App Mobile avec REACT NATIVE pour Débutant | Tutoriel React Native](https://www.youtube.com/watch?v=o2GUagUfJeA)
+# Table des matières
 
-## Autres Sources
-- [Documentation de React Native](https://reactnative.dev/docs/getting-started)
-- [Expo guides](https://docs.expo.dev/guides/overview/)  
-► npx create-expo-app@latest  
-► npx expo start  
-► npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar  
-► npm install react-native-vector-icons --save  
-- [Installer les dépendances avec Expo](https://docs.expo.dev/router/installation/#install-dependencies)
-- [Design avec React Native Elements](https://reactnativeelements.com/docs)
-- [Créer des composants avec Tailwind CSS](https://www.youtube.com/watch?v=hAMVFvMB5Jo) - [Tailwind CSS Documentation](https://tailwindcss.com)
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+1. [GestionPlancherMobile](#gestionplanchermobile)
+2. [Commandes et Description pour Démarrer un Projet React Native](#commandes-et-description-pour-d%C3%A9marrer-un-projet-react-native)
+3. [Création d'un Nouveau Projet](#cr%C3%A9ation-dun-nouveau-projet)
+4. [Installation de Packages pour la Navigation et l'Amélioration des Performances](#installation-de-packages-pour-la-navigation-et-lam%C3%A9lioration-des-performances)
+5. [Recommandations d'Extensions pour Visual Studio Code](#recommandations-dextensions-pour-visual-studio-code)
+6. [Gestion de l'Authentification](#gestion-de-lauthentification)
+7. [Sources de tutoriels](#sources-de-tutoriels-démarrer-un-Projet-React-Native)
+8. [Autres Sources](#autres-sources-démarrer-un-Projet-React-Native)
+
 
 ## Commandes et Description pour Démarrer un Projet React Native
 
@@ -163,4 +159,22 @@ Il est recommandé d'intaller la version de TypeScript 5.3.3 qui est compatible 
      ```
 
 ## Gestion de l'Authentification
+
+
+
+## Sources de tutoriels démarrer un Projet React Native
+- [Introduction à la création d'une application mobile avec React Native et Visual Studio Code](https://www.youtube.com/watch?v=gXrBpt9MLzE)
+- [Créer une App Mobile avec REACT NATIVE pour Débutant | Tutoriel React Native](https://www.youtube.com/watch?v=o2GUagUfJeA)
+
+## Autres Sources démarrer un Projet React Native
+- [Documentation de React Native](https://reactnative.dev/docs/getting-started)
+- [Expo guides](https://docs.expo.dev/guides/overview/)  
+► npx create-expo-app@latest  
+► npx expo start  
+► npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar  
+► npm install react-native-vector-icons --save  
+- [Installer les dépendances avec Expo](https://docs.expo.dev/router/installation/#install-dependencies)
+- [Design avec React Native Elements](https://reactnativeelements.com/docs)
+- [Créer des composants avec Tailwind CSS](https://www.youtube.com/watch?v=hAMVFvMB5Jo) - [Tailwind CSS Documentation](https://tailwindcss.com)
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 
