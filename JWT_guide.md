@@ -20,7 +20,15 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 
 ## Introduction aux JWT
 
-Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission sécurisée d'informations entre deux parties sous la forme d'un objet JSON. Ces informations sont signées numériquement pour garantir l'authenticité et l'intégrité des données.
+Contexte Historique : Les JSON Web Tokens (JWT) ont été introduits en 2014 par le groupe de travail JWT au sein de l'IETF (Internet Engineering Task Force). JWT est une spécification qui est devenue un standard ouvert pour le transfert sécurisé d'informations entre deux parties. Avec l'augmentation des API web et des applications distribuées, JWT est devenu un choix populaire pour l'authentification et l'échange de données, grâce à sa simplicité et à sa capacité à transporter des informations de manière sécurisée.  
+
+Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission sécurisée d'informations entre deux parties sous la forme d'un objet JSON. Ces informations sont signées numériquement pour garantir l'authenticité et l'intégrité des données.  
+
+Cas d'Utilisation : Les JWT sont largement utilisés dans divers scénarios, notamment :  
+
+- Authentification d'API : Permet aux clients de se connecter à un serveur et d'accéder aux ressources protégées sans avoir à se réauthentifier à chaque demande.
+- Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services.
+- Échange de Données : Transfert sécurisé de données entre différentes parties ou systèmes.  
 
 ## Structure d'un JWT
 
