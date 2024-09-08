@@ -46,7 +46,7 @@ Voici un exemple de JWT :
 ## Exemple pratique
 
 
-
+![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg)
 
 
 ## Conclusion
