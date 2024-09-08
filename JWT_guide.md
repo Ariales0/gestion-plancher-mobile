@@ -59,6 +59,18 @@ Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement
 - **Utilisez HTTPS** pour sécuriser la transmission des JWT.
 - **Invalider les tokens** : Assurez-vous d'avoir un mécanisme pour invalider les tokens si nécessaire.
 
+## Sécurité des JWT
+
+Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :
+
+- **Stockage Sécurisé des Clés** : Utilisez des systèmes de gestion des secrets ou des environnements sécurisés pour stocker les clés secrètes utilisées pour signer les JWT.
+- **Rotation des Clés** : Mettez en place une stratégie de rotation régulière des clés pour minimiser le risque d'exposition en cas de compromission.
+- **Expiration des Tokens** : Définissez une période d'expiration appropriée pour vos JWT afin de limiter la durée pendant laquelle un token peut être utilisé en cas de compromission.
+- **Régénération des Tokens** : Utilisez des mécanismes pour renouveler les tokens expirés, comme les tokens de rafraîchissement, pour maintenir l'accès sans nécessiter une nouvelle authentification complète.
+- **Évitez le Stockage Local** : Ne stockez pas de JWT sensibles dans le stockage local du navigateur ; utilisez des cookies sécurisés et HTTP-only si vous devez stocker des tokens.
+- **Utilisez HTTPS** : Assurez-vous que toutes les communications impliquant des JWT sont protégées par HTTPS pour éviter les attaques de type "man-in-the-middle".
+- **Invalider les Tokens** : Assurez-vous d'avoir un mécanisme pour invalider les tokens si nécessaire.
+
 
 
 ## Exemple pratique
