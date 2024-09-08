@@ -22,7 +22,7 @@ Un JWT est composé de trois parties séparées par des points :
 1. **Header** : Contient le type de token (JWT) et l'algorithme de signature.
 2. **Payload** : Contient les revendications (claims), c'est-à-dire les informations à transmettre.
 3. **Signature** : Vérifie que le contenu n'a pas été altéré.  
-![Structure du JWT](gestion-plancher-mobile\src\assets\images\JWT_guide)
+![Structure du JWT](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/Structured'un%20JWL.png)
 
 Voici un exemple de JWT :
 
