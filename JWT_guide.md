@@ -28,7 +28,7 @@ Cas d'Utilisation : Les JWT sont largement utilisés dans divers scénarios, not
 
 - Authentification d'API : Permet aux clients de se connecter à un serveur et d'accéder aux ressources protégées sans avoir à se réauthentifier à chaque demande.
 - Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services.  
-  _Stateless : Pas besoin de stocker les sessions sur le serveur._  
+  Stateless : _Pas besoin de stocker les sessions sur le serveur._  
 
 - Échange de Données : Transfert sécurisé de données entre différentes parties ou systèmes.  
 
