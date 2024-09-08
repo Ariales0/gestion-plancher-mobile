@@ -49,7 +49,7 @@ Voici un exemple de JWT :
 ![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg)
 ## Exemple pratique
 
-<img src="https://github.com/Ariales0/gestion-plancher-mobile/raw/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg" alt="Fonctionnement" width="300"/>
+<img src="https://github.com/Ariales0/gestion-plancher-mobile/raw/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg" alt="Fonctionnement" width="50%"/>
 
 
 ## Conclusion
