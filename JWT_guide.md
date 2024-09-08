@@ -40,7 +40,7 @@ Un JWT est composé de trois parties séparées par des points :
 3. **Signature** : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connaît.    
 ![Structure du JWT](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/Structured'un%20JWL.png)  
 
-Décodage d'un JWT : Pour décoder un JWT, vous pouvez utiliser des outils en ligne comme [Décryptage et vérification JWT via jwt.io](jwt.io) qui permettent de visualiser les parties Header, Payload, et Signature du token. Vous pouvez également utiliser des bibliothèques spécifiques dans divers langages de programmation pour décoder et vérifier les JWT.
+Décodage d'un JWT : Pour décoder un JWT, vous pouvez utiliser des outils en ligne comme [Décryptage et vérification JWT via jwt.io](https://jwt.io/) qui permettent de visualiser les parties Header, Payload, et Signature du token. Vous pouvez également utiliser des bibliothèques spécifiques dans divers langages de programmation pour décoder et vérifier les JWT.
 
 
 ## Utilisation des JWT  
