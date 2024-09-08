@@ -54,7 +54,7 @@ Les JWT sont souvent utilisés pour :
 
 ## Sécurité des JWT
 
-Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :
+Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :  
 Stateless : Pas besoin de stocker les sessions sur le serveur.
 
 - **Stockage Sécurisé des Clés** : Utilisez des systèmes de gestion des secrets ou des environnements sécurisés pour stocker les clés secrètes utilisées pour signer les JWT.
