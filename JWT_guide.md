@@ -168,14 +168,14 @@ Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses **claims**
 - **Public claims** : des informations personnalisées comme le nom d'utilisateur, le rôle, l'e-mail.
 - **Private claims** : des données définies par l'émetteur et le récepteur pour des besoins spécifiques.  
 
-## Différence entre Token d'authentification et Token d'autorisation
+## Difference entre Token dauthentification et Token dautorisation
 
 - **Token d'authentification** :
   - Utilisé pour vérifier l'identité de l'utilisateur.
   - Fournit un accès à l'application après une connexion réussie.
   - Exemple : Un token pour confirmer que l'utilisateur est bien celui qu'il prétend être.
 
-- **Token d'autorisatioewaen** :
+- **Token d'autorisation** :
   - Utilisé pour accorder ou limiter l'accès à certaines ressources ou actions spécifiques.
   - Gère les permissions (ce que l'utilisateur peut ou ne peut pas faire).
   - Exemple : Un token indiquant si l'utilisateur peut accéder à une API particulière.
