@@ -207,8 +207,6 @@ Dans une application React Native utilisant une API Node.js et une base de donn�
 
 - L'API Node.js compare les permissions de l'utilisateur avec l'action demandée. Si l'utilisateur est autorisé, la requête est traitée ; sinon, une erreur est renvoyée (403 Forbidden).
 
-E
-
 
 ## Sources
 
