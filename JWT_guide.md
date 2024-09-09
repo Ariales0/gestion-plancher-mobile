@@ -15,7 +15,7 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 10. [Erreurs Courantes avec les JWT](#erreurs-courantes-avec-les-jwt)
 11. [Meilleures Pratiques pour les JWT](#meilleures-pratiques-pour-les-jwt)
 12. [Informations qu’on peut mettre dans un token](#Informations-quon-peut-mettre-dans-un-token)
-13. [Différence entre Token d'authentification et Token d'autorisation](#Difference-entre-Token-d-authentification-et-Token-d-autorisation)
+13. [Différence entre Token d'authentification et Token d'autorisation](#difference-entre-token-dauthentification-et-token-dautorisation)
 14. [Conclusion](#conclusion)
 15. [Sources](#sources)
 ---
