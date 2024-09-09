@@ -16,6 +16,7 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 11. [Meilleures Pratiques pour les JWT](#meilleures-pratiques-pour-les-jwt)
 12. [Informations qu’on peut mettre dans un token](#Informations-quon-peut-mettre-dans-un-token)
 13. [Différence entre Token d'authentification et Token d'autorisation](#difference-entre-token-dauthentification-et-token-dautorisation)
+14. [Processus de Gestion des Permissions dans une Application React Native avec API Node.js](#processus-de-gestion-des-permissions-dans-une-application-react-native-avec-api-nodejs)
 14. [Conclusion](#conclusion)
 15. [Sources](#sources)
 ---
@@ -168,7 +169,7 @@ Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses **claims**
 - **Public claims** : des informations personnalisées comme le nom d'utilisateur, le rôle, l'e-mail.
 - **Private claims** : des données définies par l'émetteur et le récepteur pour des besoins spécifiques.  
 
-## Difference entre Token dauthentification et Token dautorisation
+## Difference entre Token d authentification et Token d autorisation
 
 - **Token d'authentification** :
   - Utilisé pour vérifier l'identité de l'utilisateur.
@@ -179,6 +180,34 @@ Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses **claims**
   - Utilisé pour accorder ou limiter l'accès à certaines ressources ou actions spécifiques.
   - Gère les permissions (ce que l'utilisateur peut ou ne peut pas faire).
   - Exemple : Un token indiquant si l'utilisateur peut accéder à une API particulière.
+
+## Processus de Gestion des Permissions dans une Application React Native avec API Node.js
+
+Dans une application React Native utilisant une API Node.js et une base de données SQL, la gestion des permissions suit généralement ces étapes :
+
+### Authentification utilisateur
+
+- L'utilisateur se connecte via l'application React Native (par exemple avec un formulaire).
+- L'API Node.js vérifie les informations d'identification (par exemple dans la base de données SQL) et génère un token JWT.
+
+### Envoi du token
+
+- Le token JWT est renvoyé au client (React Native) après connexion réussie et est stocké (local storage ou secure storage).
+
+### Requêtes avec autorisation
+
+- Pour chaque requête nécessitant une permission (par exemple, accès à des données spécifiques), le client envoie le token JWT dans les headers de la requête (généralement dans le header Authorization).
+
+### Vérification des permissions
+
+- L'API Node.js vérifie le token JWT pour confirmer l'identité de l'utilisateur et récupérer les permissions associées.
+- Les permissions peuvent être stockées dans la base de données SQL (par exemple, les rôles ou droits de l'utilisateur).
+
+### Autorisation
+
+- L'API Node.js compare les permissions de l'utilisateur avec l'action demandée. Si l'utilisateur est autorisé, la requête est traitée ; sinon, une erreur est renvoyée (403 Forbidden).
+
+E
 
 
 ## Sources
