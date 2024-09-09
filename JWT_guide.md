@@ -14,8 +14,10 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 9. [Exemples de Claims JWT Privés](#exemples-de-claims-jwt-privés)
 10. [Erreurs Courantes avec les JWT](#erreurs-courantes-avec-les-jwt)
 11. [Meilleures Pratiques pour les JWT](#meilleures-pratiques-pour-les-jwt)
-12. [Conclusion](#conclusion)
-13. [Sources](#sources)
+12. [Informations qu’on peut mettre dans un token](#Informations-qu’on-peut-mettre-dans-un-token)
+13. [Différence entre Token d'authentification et Token d'autorisation](#Différenc-eentre-Token-d'authentification-et-Token-d'autorisation)
+14. [Conclusion](#conclusion)
+15. [Sources](#sources)
 ---
 
 ## Introduction aux JWT
