@@ -154,7 +154,29 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 | **Validation des Claims**        | Toujours valider les claims du JWT (comme `exp`, `nbf`, `aud`) pour s'assurer de leur légitimité.          |
 | **Utiliser des Algorithmes Sécurisés** | Choisir des algorithmes de signature sécurisés comme RS256 ou ES256 au lieu de `none`.                   |
 
-## 
+## Informations qu’on peut mettre dans un token
+
+Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses **claims** :
+
+- **Registered claims** : 
+  - `iss` (issuer) : l'émetteur du token.
+  - `sub` (subject) : l'identité du sujet (généralement un utilisateur).
+  - `exp` (expiration) : la date d'expiration du token.
+  - `iat` (issued at) : la date de création du token.
+- **Public claims** : des informations personnalisées comme le nom d'utilisateur, le rôle, l'e-mail.
+- **Private claims** : des données définies par l'émetteur et le récepteur pour des besoins spécifiques.  
+
+## Différence entre Token d'authentification et Token d'autorisation
+
+- **Token d'authentification** :
+  - Utilisé pour vérifier l'identité de l'utilisateur.
+  - Fournit un accès à l'application après une connexion réussie.
+  - Exemple : Un token pour confirmer que l'utilisateur est bien celui qu'il prétend être.
+
+- **Token d'autorisation** :
+  - Utilisé pour accorder ou limiter l'accès à certaines ressources ou actions spécifiques.
+  - Gère les permissions (ce que l'utilisateur peut ou ne peut pas faire).
+  - Exemple : Un token indiquant si l'utilisateur peut accéder à une API particulière.
 
 
 ## Sources
