@@ -175,7 +175,7 @@ Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses **claims**
   - Fournit un accès à l'application après une connexion réussie.
   - Exemple : Un token pour confirmer que l'utilisateur est bien celui qu'il prétend être.
 
-- **Token d'autorisation** :
+- **Token d'autorisatioewaen** :
   - Utilisé pour accorder ou limiter l'accès à certaines ressources ou actions spécifiques.
   - Gère les permissions (ce que l'utilisateur peut ou ne peut pas faire).
   - Exemple : Un token indiquant si l'utilisateur peut accéder à une API particulière.
