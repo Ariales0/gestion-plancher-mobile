@@ -207,8 +207,7 @@ La gestion des permissions dans une application React Native utilisant une API N
 
 - **Comparaison des permissions** : L'API Node.js compare les permissions de l'utilisateur avec l'action demandée. Si l'utilisateur est autorisé, la requête est traitée ; sinon, une erreur est renvoyée (403 Forbidden).
 
-**Exemple** : Un utilisateur avec un rôle "admin" peut accéder à des routes spécifiques de l'API (comme la gestion d'utilisateurs), tandis qu'un utilisateur avec un rôle "user" n'a accès qu'à des fonctionnalités basiques.
-
+  **Exemple** : Un utilisateur avec un rôle "admin" peut accéder à des routes spécifiques de l'API (comme la gestion d'utilisateurs), tandis qu'un utilisateur avec un rôle "user" n'a accès qu'à des fonctionnalités basiques.  
 
 
 ## Sources
