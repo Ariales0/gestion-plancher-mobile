@@ -185,29 +185,29 @@ Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses **claims**
 
 La gestion des permissions dans une application React Native utilisant une API Node.js et une base de données SQL suit généralement ces étapes :
 
-  ### 1. Authentification utilisateur
+### 1. Authentification utilisateur
 
-  - **Connexion** : L'utilisateur se connecte via l'application React Native (par exemple, avec un formulaire).
-  - **Vérification** : L'API Node.js vérifie les informations d'identification dans la base de données SQL et génère un token JWT.
+- **Connexion** : L'utilisateur se connecte via l'application React Native (par exemple, avec un formulaire).
+- **Vérification** : L'API Node.js vérifie les informations d'identification dans la base de données SQL et génère un token JWT.
 
-  ### 2. Envoi du token
+### 2. Envoi du token
 
-  - **Renvoi du token** : Après une connexion réussie, le token JWT est renvoyé au client (React Native) et stocké en local (local storage ou secure storage).
+- **Renvoi du token** : Après une connexion réussie, le token JWT est renvoyé au client (React Native) et stocké en local (local storage ou secure storage).
 
-  ### 3. Requêtes avec autorisation
+### 3. Requêtes avec autorisation
 
-  - **Envoi du token** : Pour chaque requête nécessitant une permission, le client envoie le token JWT dans les headers de la requête (généralement dans le header `Authorization`).
+- **Envoi du token** : Pour chaque requête nécessitant une permission, le client envoie le token JWT dans les headers de la requête (généralement dans le header `Authorization`).
 
-  ### 4. Vérification des permissions
+### 4. Vérification des permissions
 
-  - **Validation du token** : L'API Node.js vérifie le token JWT pour confirmer l'identité de l'utilisateur et récupérer les permissions associées.
-  - **Permissions en base** : Les permissions peuvent être stockées dans la base de données SQL (par exemple, les rôles ou droits de l'utilisateur).
+- **Validation du token** : L'API Node.js vérifie le token JWT pour confirmer l'identité de l'utilisateur et récupérer les permissions associées.
+- **Permissions en base** : Les permissions peuvent être stockées dans la base de données SQL (par exemple, les rôles ou droits de l'utilisateur).
 
-  ### 5. Autorisation
+### 5. Autorisation
 
-  - **Comparaison des permissions** : L'API Node.js compare les permissions de l'utilisateur avec l'action demandée. Si l'utilisateur est autorisé, la requête est traitée ; sinon, une erreur est renvoyée (403 Forbidden).
+- **Comparaison des permissions** : L'API Node.js compare les permissions de l'utilisateur avec l'action demandée. Si l'utilisateur est autorisé, la requête est traitée ; sinon, une erreur est renvoyée (403 Forbidden).
 
-    **Exemple** : Un utilisateur avec un rôle "admin" peut accéder à des routes spécifiques de l'API (comme la gestion d'utilisateurs), tandis qu'un utilisateur avec un rôle "user" n'a accès qu'à des fonctionnalités basiques.  
+  **Exemple** : Un utilisateur avec un rôle "admin" peut accéder à des routes spécifiques de l'API (comme la gestion d'utilisateurs), tandis qu'un utilisateur avec un rôle "user" n'a accès qu'à des fonctionnalités basiques.  
 
 
 ## Sources
