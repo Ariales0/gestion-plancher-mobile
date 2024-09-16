@@ -1,4 +1,4 @@
-import { Button, View, Text, TextInput, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import { Button, View, Text, TextInput, StyleSheet, TouchableOpacity, Image} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
@@ -68,7 +68,8 @@ const Réglages = ({ navigation }) => {
           </View>
         </View>
         <TouchableOpacity 
-          style={styles.button}>
+          style={styles.button}
+          onPress={() => navigation.navigate('Thermostats')}>
           <Text style={styles.buttonText}>Sauvegarder</Text>
         </TouchableOpacity>
       </View>
