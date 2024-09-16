@@ -1,7 +1,7 @@
 import { Button, View, Text , TextInput, StyleSheet, TouchableOpacity, Image, Dimensions} from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen'; //
 
 const Login = ({ navigation }) => {
   return (
