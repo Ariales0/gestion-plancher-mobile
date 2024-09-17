@@ -1,9 +1,42 @@
-import { Button, View, Text , TextInput, StyleSheet, TouchableOpacity, Image, Dimensions} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { Button, View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Dimensions, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import { Colors } from 'react-native/Libraries/NewAppScreen'; //
+import { Colors } from 'react-native/Libraries/NewAppScreen'; 
+import AsyncStorage from '@react-native-async-storage/async-storage'; // Permet de stocker des données dans le courriel et préférences de l'utilisateur
 
 const Login = ({ navigation }) => {
+
+  // États pour les champs de saisie
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  // Fonction pour vérifier les informations de connexion
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://192.168.2.10:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+      console.log('Login response:', data);
+
+      if (response.ok) {
+        // Stocker le jeton d'authentification dans le stockage sécurisé
+        await AsyncStorage.setItem('token',data.token);
+        // Naviguer vers la page Thermostats
+        navigation.navigate('Thermostats', { username});
+      } else {
+        Alert.alert('Erreur', data.msg);
+      }
+    } catch (error) {
+      Alert.alert('Erreur', 'une erreur est survenue.');
+    }
+  };
+
   return (
     <View style={styles.container}>
       {/* Banner */}
@@ -15,24 +48,22 @@ const Login = ({ navigation }) => {
       <View style={styles.loginContainer}>
         <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 4}}>Veuillez vous connecter avec votre compte.</Text>
         <View style={styles.inputContainer}>
-          <TextInput style={styles.input} placeholder="Saissisez votre nom d'utilisateur" />
-          <TextInput style={styles.input} placeholder="Saissisez votre mot de passe"
-          secureTextEntry/>
+          <TextInput style={styles.input} placeholder="Saissisez votre nom d'utilisateur" value={username} onChangeText={setUsername}/>
+          <TextInput style={styles.input} placeholder="Saissisez votre mot de passe"  secureTextEntry value={password} onChangeText={setPassword}/>
         </View>
-        {/* <button title="Identifiant" onPress={() => navigation.navigate('Thermostats')} />
-         */}
+        {/* <button title="Identifiant" onPress={() => navigation.navigate('Thermostats')} /> */}
         <TouchableOpacity 
           style={styles.button}
-          onPress={() => navigation.navigate('Thermostats')}>
+          onPress={handleLogin}>
+          { /* onPress={() => navigation.navigate('Thermostats')}> */}
           <Text style={styles.buttonText}>Identifiant</Text>
         </TouchableOpacity>
       </View>
-
-      {/* Footer */}
-      <View style={styles.footer}>
-          <View style={styles.topbar}/>
-        <Text style={styles.footerText} >Version: 1.01</Text>
-      </View>
+        {/* Footer */}
+        <View style={styles.footer}>
+            <View style={styles.topbar}/>
+          <Text style={styles.footerText} >Version: 1.01</Text>
+        </View>
       </View>
   )
 }

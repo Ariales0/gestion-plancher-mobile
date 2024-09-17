@@ -1,12 +1,17 @@
 import { Button, View, Text , StyleSheet, TouchableOpacity, Image, Alert} from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Thermostats = ({ navigation }) => {
+{/*const Thermostats = ({ navigation }) => { */}
 
+const Thermostats = () => {
+  const route = useRoute(); // Récupérer les paramètres de la page précédente
+  const navigation = useNavigation(); 
+
+  const { username } = route.params ||{}; // Récupérer le nom d'utilisateur de la page précédente
   const thermostatId = '1392250'
-  const thermostatName = 'Bain'
+  const thermostatName = 'bain'
 
   const handlePress = () => {
     Alert.alert(
@@ -48,7 +53,7 @@ const Thermostats = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.headerRight}>
-          <Text style={styles.headerBienvenue}>Bienvenue, {thermostatName}</Text>
+          <Text style={styles.headerBienvenue}>Bienvenue, { username }</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={styles.headerDeconnection}>| Se déconnecter</Text>
           </TouchableOpacity>
