@@ -51,6 +51,6 @@ Pour installer MkDocs, exécutez la commande suivante dans votre terminal ou inv
 
 ```bash
 pip install mkdocs
-
+```
 
 ### 2. Installer MkDocs
