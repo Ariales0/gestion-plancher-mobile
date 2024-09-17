@@ -44,7 +44,7 @@ Un JWT est composé de trois parties séparées par des points :
     C'est l'emplacement ou est précisé les dates de création et d'expiration du token.  
     Exemple: (exp = expiration en timestamp    "exp": 1647807974)  
 3. **Signature** : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connaît.    
-![Fonctionnement](assets/images/JWT_guide/Structured'un%20JWL.png)  
+![Structure](assets/images/JWT_guide/Structured'un%20JWL.png)  
 
 Décodage d'un JWT : Pour décoder un JWT, vous pouvez utiliser des outils en ligne comme [Décryptage et vérification JWT via jwt.io](https://jwt.io/) qui permettent de visualiser les parties Header, Payload, et Signature du token. Vous pouvez également utiliser des bibliothèques spécifiques dans divers langages de programmation pour décoder et vérifier les JWT.
 
@@ -55,7 +55,7 @@ Les JWT sont souvent utilisés pour :
 - **Authentification** : Ils permettent à un utilisateur de se connecter une fois et de continuer à accéder aux ressources sans avoir à se reconnecter à chaque requête.
 - **Échange d'information sécurisé** : Le contenu d'un JWT peut être signé et éventuellement chiffré.
 
-![Fonctionnement](assets/images/JWT_guide/jwt-workflow.png)
+![Utilisation](assets/images/JWT_guide/jwt-workflow.png)
 
 
 

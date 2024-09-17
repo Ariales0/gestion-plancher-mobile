@@ -39,7 +39,8 @@
 
 Avant d'installer MkDocs, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-- Python 3.6 ou version ultérieure
+- [Python 3.6 ou version ultérieure ](https://www.python.org/downloads)
+
 - Pip (gestionnaire de paquets Python)
 
 ## Installation de MkDocs
