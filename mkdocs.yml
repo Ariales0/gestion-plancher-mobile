@@ -27,7 +27,7 @@ theme:
 nav:
   - Accueil: index.md
   - Guides:
-      - "Introduction": guide_intro.md
+      - "Introduction ➠ ReadMe": guide_intro.md
       - "Json Web Token": JWT_guide.md
   - Référence:
       - API: reference/api.md
