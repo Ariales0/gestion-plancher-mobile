@@ -1,15 +1,22 @@
 import { Button, View, Text , StyleSheet, TouchableOpacity, Image, Alert} from 'react-native'
 import React from 'react'
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 {/*const Thermostats = ({ navigation }) => { */}
 
+type RootStackParamList = {
+  Thermostats: { username: string }; // Déclarez ici les paramètres que vous attendez dans la page Thermostats
+};
+
+type ThermostatsScreenRouteProp = RouteProp<RootStackParamList, 'Thermostats'>;
+
 const Thermostats = () => {
-  const route = useRoute(); // Récupérer les paramètres de la page précédente
+  const route = useRoute<ThermostatsScreenRouteProp>(); // Récupérer les paramètres de la page précédente
   const navigation = useNavigation(); 
 
-  const { username } = route.params ||{}; // Récupérer le nom d'utilisateur de la page précédente
+  const { username } = route.params ||{ username: 'utilisateur inconnu'}; // Récupérer le nom d'utilisateur de la page précédente
+  
   const thermostatId = '1392250'
   const thermostatName = 'bain'
 

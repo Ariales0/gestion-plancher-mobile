@@ -8,10 +8,10 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 3. [Utilisation des JWT](#utilisation-des-jwt)
 4. [Sécurité des JWT](#sécurité-des-jwt)
 5. [Exemple pratique](#exemple-pratique)
-6. [Exemples de Signatures JWT et Leur Description](#exemples-de-signatures-jwt-et-leur-description)
-7. [Exemples de Claims JWT et Leur Description](#exemples-de-claims-jwt-et-leur-description)
-8. [Exemples de Claims JWT Publics](#exemples-de-claims-jwt-publics)
-9. [Exemples de Claims JWT Privés](#exemples-de-claims-jwt-privés)
+6. [Signatures JWT et Leur Description](#exemples-de-signatures-jwt-et-leur-description)
+7. [Claims JWT et Leur Description](#exemples-de-claims-jwt-et-leur-description)
+8. [Claims JWT Publics](#exemples-de-claims-jwt-publics)
+9. [Claims JWT Privés](#exemples-de-claims-jwt-privés)
 10. [Erreurs Courantes avec les JWT](#erreurs-courantes-avec-les-jwt)
 11. [Meilleures Pratiques pour les JWT](#meilleures-pratiques-pour-les-jwt)
 12. [Informations qu’on peut mettre dans un token](#Informations-quon-peut-mettre-dans-un-token)
@@ -24,26 +24,27 @@ Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonct
 ## Introduction aux JWT
 
 Contexte Historique : Les JSON Web Tokens (JWT) ont été introduits en 2014 par le groupe de travail JWT au sein de l'IETF (Internet Engineering Task Force). JWT est une spécification qui est devenue un standard ouvert pour le transfert sécurisé d'informations entre deux parties. Avec l'augmentation des API web et des applications distribuées, JWT est devenu un choix populaire pour l'authentification et l'échange de données, grâce à sa simplicité et à sa capacité à transporter des informations de manière sécurisée.  
-
+  
 Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission sécurisée d'informations entre deux parties sous la forme d'un objet JSON. Ces informations sont signées numériquement pour garantir l'authenticité et l'intégrité des données.  
-
+  
 Cas d'Utilisation : Les JWT sont largement utilisés dans divers scénarios, notamment :  
-
+  
 - Authentification d'API : Permet aux clients de se connecter à un serveur et d'accéder aux ressources protégées sans avoir à se réauthentifier à chaque demande.
 - Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services.  
   Stateless : _Pas besoin de stocker les sessions sur le serveur._  
-
+  
 - Échange de Données : Transfert sécurisé de données entre différentes parties ou systèmes.  
 
 ## Structure d'un JWT
 
-Un JWT est composé de trois parties séparées par des points :
-1. **Header** : Contient le type (typ) de token (JWT) et l'algorithme de signature (alg).
+Un JWT est composé de trois parties séparées par des points :  
+   
+1. **Header** : Contient le type (typ) de token (JWT) et l'algorithme de signature (alg).  
 2. **Payload** : Contient les revendications (claims) document Json, c'est-à-dire les informations à transmettre.  
     C'est l'emplacement ou est précisé les dates de création et d'expiration du token.  
     Exemple: (exp = expiration en timestamp    "exp": 1647807974)  
 3. **Signature** : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connaît.    
-![Structure du JWT](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/Structured'un%20JWL.png)  
+![Fonctionnement](assets/images/JWT_guide/Structured'un%20JWL.png)  
 
 Décodage d'un JWT : Pour décoder un JWT, vous pouvez utiliser des outils en ligne comme [Décryptage et vérification JWT via jwt.io](https://jwt.io/) qui permettent de visualiser les parties Header, Payload, et Signature du token. Vous pouvez également utiliser des bibliothèques spécifiques dans divers langages de programmation pour décoder et vérifier les JWT.
 
@@ -54,7 +55,9 @@ Les JWT sont souvent utilisés pour :
 - **Authentification** : Ils permettent à un utilisateur de se connecter une fois et de continuer à accéder aux ressources sans avoir à se reconnecter à chaque requête.
 - **Échange d'information sécurisé** : Le contenu d'un JWT peut être signé et éventuellement chiffré.
 
-![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/jwt-workflow.png)
+![Fonctionnement](assets/images/JWT_guide/jwt-workflow.png)
+
+
 
 
 ## Sécurité des JWT
@@ -80,7 +83,7 @@ const jwt = require('jsonwebtoken');
 const token = jwt.sign({ userId: 123 }, 'secret_key', { expiresIn: '1h' });
 console.log(token);
 ```
-![Fonctionnement](https://github.com/Ariales0/gestion-plancher-mobile/blob/iteration-Visuel-steve/src/assets/images/JWT_guide/exemple-login.jpg)
+![Fonctionnement](assets/images/JWT_guide/exemple-login.jpg)
 
 
 ## Conclusion
@@ -91,7 +94,7 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 
 ## Tableaux
 
-### Exemples de Signatures JWT et Leur Description
+### Signatures JWT et Leur Description
 
 | **Exemple de Signature JWT**        | **Description**                                                                                          |
 |-------------------------------------|----------------------------------------------------------------------------------------------------------|
@@ -103,7 +106,7 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 | `none`                              | Pas de signature, utilisé pour les JWT non signés, généralement déconseillé pour la sécurité.            |
 
 
-### Exemples de Claims JWT et Leur Description
+### Claims JWT et Leur Description
 
 | **Claim JWT**    | **Description**                                                                                           |
 |------------------|-----------------------------------------------------------------------------------------------------------|
@@ -119,7 +122,7 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 | `jti`            | **JWT ID** : Identifiant unique pour le jeton, souvent utilisé pour éviter les rejets de jetons.           |
 | `aud`            | **Audience** : Spécifie le ou les destinataires pour lesquels le jeton est destiné.                        |
 
-### Exemples de Claims JWT Publics
+### Claims JWT Publics
 
 | **Claim JWT**    | **Description**                                                                                           |
 |------------------|-----------------------------------------------------------------------------------------------------------|
@@ -129,7 +132,7 @@ Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé 
 | `name`           | Nom complet de l'utilisateur.                                                                            |
 | `scope`          | Portée ou les permissions accordées par le jeton.                                                        |
 
-### Exemples de Claims JWT Privés
+### Claims JWT Privés
 
 | **Claim JWT**    | **Description**                                                                                           |
 |------------------|-----------------------------------------------------------------------------------------------------------|

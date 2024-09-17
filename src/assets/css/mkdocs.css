@@ -1,0 +1,30 @@
+.md-sidebar {
+  background-color: #f5f5f5; /* Couleur d'arrière-plan du menu */
+  padding: 20px;
+}
+
+.md-nav__item a {
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.md-nav__item a:hover {
+  color: #ff4081; /* Couleur survol des éléments de menu */
+}
+
+.md-nav {
+  border-right: 1px solid #ddd;
+}
+
+.md-main {
+  width: 100vw; /* Utiliser la largeur de la fenêtre du navigateur */
+  max-width: 100%; /* Assurer que le contenu ne dépasse pas la largeur disponible */
+  box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+}
+
+
+.md-footer {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px;
+}

@@ -13,7 +13,7 @@ const Login = ({ navigation }) => {
   // Fonction pour vérifier les informations de connexion
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://192.168.2.10:5000/api/auth/login', {
+      const response = await fetch('http://192.168.56.1:5000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

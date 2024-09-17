@@ -1,0 +1,47 @@
+# Fichier mkdocs.yml
+
+site_name: "Gestion de Plancher Mobile"
+site_description: "Une description professionnelle"
+site_author: "Steve"
+docs_dir: src/docs
+site_url: "https://ton-site.com"
+repo_url: "https://github.com/ton-repo"
+
+theme:
+  name: readthedocs
+  # Configuration du thème
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+    logo: 'ImSTEVE.png'  # Lien vers un logo personnalisé (optionnel)
+  favicon: assets/favicon.ico  # Favicon (optionnel)
+  
+nav:
+  - Accueil: index.md
+  - Guides:
+      - "README": README.md
+      - "Json Web Token": JWT_guide.md
+  - Référence:
+      - API: reference/api.md
+      - Commandes: reference/commands.md
+  - À propos: about.md
+
+# Options supplémentaires
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ton-repo
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ton-compte
+
+# Ajout du fichier CSS personnalisé
+extra_css:
+  - assets/css/mkdocs.css
