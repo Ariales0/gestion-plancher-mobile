@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="La triade du tonnerre" /><link rel="canonical" href="https://ton-site.com/Rules%20all%20with%20mkdocs/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="La triade du tonnerre" /><link rel="canonical" href="https://ton-site.com/Rules_all_with_mkdocs/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>One to rule them all - Gestion de Plancher Mobile</title>
+    <title>Un pour les gouverner tous! ➠ mkdocs - Gestion de Plancher Mobile</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "One to rule them all";
-        var mkdocs_page_input_path = "Rules all with mkdocs.md";
-        var mkdocs_page_url = "/Rules%20all%20with%20mkdocs/";
+        var mkdocs_page_name = "Un pour les gouverner tous! \u27a0 mkdocs";
+        var mkdocs_page_input_path = "Rules_all_with_mkdocs.md";
+        var mkdocs_page_url = "/Rules_all_with_mkdocs/";
       </script>
     
     <!--[if lt IE 9]>
@@ -46,9 +46,9 @@
               </ul>
               <p class="caption"><span class="caption-text">Guides</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../guide_intro/">Introduction ➠ ReadMe</a>
+                  <li class="toctree-l1"><a class="" href="../../README_.md">Introduction ➠ ReadMe</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">One to rule them all</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Un pour les gouverner tous! ➠ mkdocs</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des Matières</a>
     </li>
@@ -56,13 +56,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#fonctionnalites-principales-de-mkdocs">Fonctionnalités Principales de MkDocs</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#commande">Commande</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#installation-de-mkdocs">Installation de MkDocs</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-installer-mkdocs">1. Installer MkDocs</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-installer-mkdocs">2. Installer MkDocs</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-installer-le-theme-material-optionnel">2. Installer le Thème Material (Optionnel)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-creer-un-nouveau-projet-mkdocs">3. Créer un Nouveau Projet MkDocs</a>
     </li>
         </ul>
     </li>
@@ -97,9 +101,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Guides</li>
-      <li class="breadcrumb-item active">One to rule them all</li>
+      <li class="breadcrumb-item active">Un pour les gouverner tous! ➠ mkdocs</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification/edit/master/docs/Rules all with mkdocs.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification/edit/master/docs/Rules_all_with_mkdocs.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -112,6 +116,7 @@
 <ol>
 <li><a href="#introduction-à-mkdocs">Introduction à MkDocs</a></li>
 <li><a href="#fonctionnalités-principales-de-mkdocs">Fonctionnalités Principales de MkDocs</a></li>
+<li><a href="#commande">Commandes et Description</a></li>
 <li><a href="#prérequis">Prérequis</a></li>
 <li><a href="#installation-de-mkdocs">Installation de MkDocs</a></li>
 <li><a href="#1-installer-mkdocs">Installation de MkDocs</a></li>
@@ -140,6 +145,95 @@
 <li><strong>Navigation automatique</strong> : MkDocs organise automatiquement la structure de vos fichiers pour créer des menus de navigation.</li>
 <li><strong>Extensions Markdown</strong> : Ajoutez des fonctionnalités comme les tables des matières, les notes de bas de page, et la coloration syntaxique du code.</li>
 </ul>
+<h2 id="commande">Commande</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pip install mkdocs</code></td>
+<td>Installe MkDocs de base sans thème supplémentaire.</td>
+</tr>
+<tr>
+<td><code>pip install mkdocs-material</code></td>
+<td>Installe le thème Material pour MkDocs.</td>
+</tr>
+<tr>
+<td><code>mkdocs new my-project</code></td>
+<td>Crée un nouveau projet MkDocs dans le répertoire <code>my-project</code>.</td>
+</tr>
+<tr>
+<td><code>cd my-project</code></td>
+<td>Accède au répertoire du nouveau projet.</td>
+</tr>
+<tr>
+<td><code>mkdocs build</code></td>
+<td>Génère les fichiers statiques du site prêt pour la production.</td>
+</tr>
+<tr>
+<td><code>mkdocs serve</code></td>
+<td>Lance le serveur de développement local pour prévisualiser le site MkDocs.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Fonctionnalité / Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mkdocs.yml</code></td>
+<td>Fichier de configuration principal pour personnaliser MkDocs (titre, thème, navigation, etc.).</td>
+</tr>
+<tr>
+<td><code>theme: 'material'</code></td>
+<td>Ajoute le thème Material dans le fichier <code>mkdocs.yml</code> sous la section <code>theme:</code>.</td>
+</tr>
+<tr>
+<td><code>nav:</code></td>
+<td>Définir la navigation du site dans <code>mkdocs.yml</code> pour organiser les pages et chapitres.</td>
+</tr>
+<tr>
+<td><code>extra_css:</code></td>
+<td>Ajoute des fichiers CSS personnalisés pour ajuster le style du site dans <code>mkdocs.yml</code>.</td>
+</tr>
+<tr>
+<td><code>extra_javascript:</code></td>
+<td>Ajoute des fichiers JavaScript supplémentaires dans <code>mkdocs.yml</code>.</td>
+</tr>
+<tr>
+<td><code>pip install mkdocs-material-extensions</code></td>
+<td>Installe des extensions pour améliorer les fonctionnalités du thème Material.</td>
+</tr>
+<tr>
+<td><code>mkdocs gh-deploy</code></td>
+<td>Déploie le site généré sur GitHub Pages directement.</td>
+</tr>
+<tr>
+<td><code>plugins:</code></td>
+<td>Ajoute des plugins dans <code>mkdocs.yml</code> pour des fonctionnalités supplémentaires comme la recherche.</td>
+</tr>
+<tr>
+<td><code>docs/</code></td>
+<td>Répertoire où placer vos fichiers Markdown qui composeront les pages du site.</td>
+</tr>
+<tr>
+<td><code>mkdocs serve --dirtyreload</code></td>
+<td>Lance un serveur de développement avec rechargement rapide des modifications locales.</td>
+</tr>
+<tr>
+<td><code>mkdocs build --clean</code></td>
+<td>Supprime les fichiers générés précédemment et construit à nouveau les fichiers du site.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="prerequis">Prérequis</h2>
 <p>Avant d'installer MkDocs, assurez-vous d'avoir les éléments suivants installés sur votre machine :</p>
 <ul>
@@ -155,12 +249,19 @@
 <p>Pour installer MkDocs, exécutez la commande suivante dans votre terminal ou invite de commandes :</p>
 <pre><code class="language-bash">pip install mkdocs
 </code></pre>
-<h3 id="2-installer-mkdocs">2. Installer MkDocs</h3>
+<h3 id="2-installer-le-theme-material-optionnel">2. Installer le Thème Material (Optionnel)</h3>
+<p>Le thème Material est un des thèmes les plus utilisés avec MkDocs. Pour l'installer, exécutez :</p>
+<pre><code class="language-bash">pip install mkdocs-material
+</code></pre>
+<h3 id="3-creer-un-nouveau-projet-mkdocs">3. Créer un Nouveau Projet MkDocs</h3>
+<p>Une fois que MkDocs est installé, vous pouvez créer un nouveau projet en utilisant la commande suivante :</p>
+<pre><code class="language-bash">mkdocs new mon_projet
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../guide_intro/" class="btn btn-neutral float-left" title="Introduction ➠ ReadMe"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral float-left" title="Accueil"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../JWT_guide/" class="btn btn-neutral float-right" title="Json Web Token">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -188,7 +289,7 @@
         </span>
     
     
-      <span><a href="../guide_intro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../JWT_guide/" style="color: #fcfcfc">Next &raquo;</a></span>

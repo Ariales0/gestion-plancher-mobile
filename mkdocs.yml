@@ -27,8 +27,8 @@ theme:
 nav:
   - Accueil: index.md
   - Guides:
-      - "Introduction ➠ ReadMe": guide_intro.md
-      - "One to rule them all": Rules all with mkdocs.md
+      - "Introduction ➠ ReadMe": README_.md
+      - "Un pour les gouverner tous! ➠ mkdocs": Rules_all_with_mkdocs.md
       - "Json Web Token": JWT_guide.md
 
   - Référence:
