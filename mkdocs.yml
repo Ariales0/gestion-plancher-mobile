@@ -2,10 +2,10 @@
 
 site_name: "Gestion de Plancher Mobile"
 site_description: "Une description professionnelle"
-site_author: "Steve"
+site_author: "La triade du tonnerre"
 docs_dir: src/docs
 site_url: "https://ton-site.com"
-repo_url: "https://github.com/ton-repo"
+repo_url: "https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification"
 
 theme:
   name: readthedocs
@@ -28,7 +28,9 @@ nav:
   - Accueil: index.md
   - Guides:
       - "Introduction ➠ ReadMe": guide_intro.md
+      - "One to rule them all": Rules all with mkdocs.md
       - "Json Web Token": JWT_guide.md
+
   - Référence:
       - API: reference/api.md
       - Commandes: reference/commands.md

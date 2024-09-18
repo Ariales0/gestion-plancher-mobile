@@ -26,7 +26,7 @@
 
 ## Introduction à MkDocs
 
-**MkDocs** est un outil open-source utilisé pour générer des sites de documentation statiques à partir de fichiers Markdown. Il est simple à utiliser, flexible, et offre une configuration minimale via un fichier YAML.
+**MkDocs** est un outil open-source utilisé pour générer des sites de documentation statiques à partir de fichiers Markdown. Il est simple à utiliser, flexible, et offre une configuration minimale via un fichier YAML ou YML.
 
 ## Fonctionnalités Principales de MkDocs
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Steve" /><link rel="canonical" href="https://ton-site.com/JWT_guide/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="La triade du tonnerre" /><link rel="canonical" href="https://ton-site.com/JWT_guide/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>Json Web Token - Gestion de Plancher Mobile</title>
     <link rel="stylesheet" href="../css/theme.css" />
@@ -41,12 +41,14 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="" href="../index.md">Accueil</a>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Guides</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="..">README</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../guide_intro/">Introduction ➠ ReadMe</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Rules%20all%20with%20mkdocs/">One to rule them all</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Json Web Token</a>
     <ul class="current">
@@ -131,7 +133,7 @@
           <li class="breadcrumb-item">Guides</li>
       <li class="breadcrumb-item active">Json Web Token</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/ton-repo/edit/master/docs/JWT_guide.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification/edit/master/docs/JWT_guide.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -148,10 +150,10 @@
 <li><a href="#utilisation-des-jwt">Utilisation des JWT</a></li>
 <li><a href="#sécurité-des-jwt">Sécurité des JWT</a></li>
 <li><a href="#exemple-pratique">Exemple pratique</a></li>
-<li><a href="#exemples-de-signatures-jwt-et-leur-description">Exemples de Signatures JWT et Leur Description</a></li>
-<li><a href="#exemples-de-claims-jwt-et-leur-description">Exemples de Claims JWT et Leur Description</a></li>
-<li><a href="#exemples-de-claims-jwt-publics">Exemples de Claims JWT Publics</a></li>
-<li><a href="#exemples-de-claims-jwt-privés">Exemples de Claims JWT Privés</a></li>
+<li><a href="#exemples-de-signatures-jwt-et-leur-description">Signatures JWT et Leur Description</a></li>
+<li><a href="#exemples-de-claims-jwt-et-leur-description">Claims JWT et Leur Description</a></li>
+<li><a href="#exemples-de-claims-jwt-publics">Claims JWT Publics</a></li>
+<li><a href="#exemples-de-claims-jwt-privés">Claims JWT Privés</a></li>
 <li><a href="#erreurs-courantes-avec-les-jwt">Erreurs Courantes avec les JWT</a></li>
 <li><a href="#meilleures-pratiques-pour-les-jwt">Meilleures Pratiques pour les JWT</a></li>
 <li><a href="#Informations-quon-peut-mettre-dans-un-token">Informations qu’on peut mettre dans un token</a></li>
@@ -183,14 +185,14 @@
     C'est l'emplacement ou est précisé les dates de création et d'expiration du token.<br />
     Exemple: (exp = expiration en timestamp    "exp": 1647807974)  </li>
 <li><strong>Signature</strong> : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connaît.  <br />
-<img alt="Fonctionnement" src="../assets/images/JWT_guide/Structured%27un%20JWL.png" />  </li>
+<img alt="Structure" src="../assets/images/JWT_guide/Structured%27un%20JWL.png" />  </li>
 </ol>
 <p>Décodage d'un JWT : Pour décoder un JWT, vous pouvez utiliser des outils en ligne comme <a href="https://jwt.io/">Décryptage et vérification JWT via jwt.io</a> qui permettent de visualiser les parties Header, Payload, et Signature du token. Vous pouvez également utiliser des bibliothèques spécifiques dans divers langages de programmation pour décoder et vérifier les JWT.</p>
 <h2 id="utilisation-des-jwt">Utilisation des JWT</h2>
 <p>Les JWT sont souvent utilisés pour :
 - <strong>Authentification</strong> : Ils permettent à un utilisateur de se connecter une fois et de continuer à accéder aux ressources sans avoir à se reconnecter à chaque requête.
 - <strong>Échange d'information sécurisé</strong> : Le contenu d'un JWT peut être signé et éventuellement chiffré.</p>
-<p><img alt="Fonctionnement" src="../assets/images/JWT_guide/jwt-workflow.png" /></p>
+<p><img alt="Utilisation" src="../assets/images/JWT_guide/jwt-workflow.png" /></p>
 <h2 id="securite-des-jwt">Sécurité des JWT</h2>
 <p>Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :  </p>
 <ul>
@@ -482,7 +484,7 @@ console.log(token);
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="README"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Rules%20all%20with%20mkdocs/" class="btn btn-neutral float-left" title="One to rule them all"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -505,11 +507,11 @@ console.log(token);
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/ton-repo" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Rules%20all%20with%20mkdocs/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

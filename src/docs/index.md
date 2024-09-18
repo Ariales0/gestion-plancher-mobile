@@ -9,12 +9,15 @@ Bienvenue sur la documentation de notre projet ! Cette documentation a pour but 
 
 ## Table des matières
 
-- [Introduction](#README)
-- [Installation](#installation)
-- [Guide d'utilisation](#guide-dutilisation)
-- [FAQ](#faq)
-- [Contribuer](#contribuer)
+- [Introduction](#introduction)
+- [Contribuer](#contributeurs)
 
 ## Introduction
 
 Ce projet est une application mobile construit en react native utilisant une API en node.js et connecté à une base de données en SQL. Cette application mobile permet de **gérer facilement vos appareils à l'aide thermostats Schluter Systems**. Vous trouverez ici tout ce dont vous avez besoin pour configurer et personnaliser l'application selon vos besoins.
+
+## Contributeurs
+
+- Steve Lepage
+- Quentin Lecourt
+- Lyes Hamrani

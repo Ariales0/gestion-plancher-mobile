@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ton-site.com/</loc>
-         <lastmod>2024-09-17</lastmod>
+         <lastmod>2024-09-18</lastmod>
     </url>
     <url>
          <loc>https://ton-site.com/JWT_guide/</loc>
-         <lastmod>2024-09-17</lastmod>
+         <lastmod>2024-09-18</lastmod>
+    </url>
+    <url>
+         <loc>https://ton-site.com/Rules%20all%20with%20mkdocs/</loc>
+         <lastmod>2024-09-18</lastmod>
+    </url>
+    <url>
+         <loc>https://ton-site.com/guide_intro/</loc>
+         <lastmod>2024-09-18</lastmod>
     </url>
 </urlset>
