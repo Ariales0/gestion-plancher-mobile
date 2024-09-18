@@ -124,33 +124,28 @@ mon_projet/
 ##### 1. Configuration Basique  
 Le fichier mkdocs.yml est où vous définissez la plupart des options de configuration de votre site de documentation. Voici un exemple simple :
 ```
-yaml
-Copier le code
 site_name: Ma Documentation
 theme: 
-  name: material
+  name: readthedocs
 ```
 - site_name : Le nom de votre site.  
 - theme : Définit le thème utilisé (ici, le thème Material).  
 
 ##### 2. Navigation  
 La navigation dans MkDocs est définie dans la section nav du fichier mkdocs.yml. Vous pouvez créer des menus avec plusieurs niveaux :
-
-yaml
-Copier le code
+```
 nav:
   - Accueil: index.md
   - Guide:
       - Installation: installation.md
       - Utilisation: guide_utilisation.md
   - Référence: reference.md
+```
 ##### 3. Thème et Apparence
 Vous pouvez personnaliser le thème et l'apparence de votre site en modifiant le fichier mkdocs.yml :
 ```
-yaml
-Copier le code
 theme:
-  name: material
+  name: readthedocs
   palette:
     primary: 'indigo'
     accent: 'pink'
@@ -158,8 +153,6 @@ theme:
 ##### 4. Extensions Markdown
 MkDocs supporte plusieurs extensions Markdown qui ajoutent des fonctionnalités supplémentaires :
 ```
-yaml
-Copier le code
 markdown_extensions:
   - toc:       # Génère des tables des matières automatiques
       permalink: true
@@ -169,8 +162,6 @@ markdown_extensions:
 ##### 5. Personnalisation avec CSS et JavaScript
 Vous pouvez également ajouter des fichiers CSS ou JavaScript personnalisés :
 ```
-yaml
-Copier le code
 extra_css:
   - 'css/custom.css'
 
