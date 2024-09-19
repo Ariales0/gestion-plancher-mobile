@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="La triade du tonnerre" /><link rel="canonical" href="https://ton-site.com/JWT_guide/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Json Web Token - Gestion de Plancher Mobile</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/css/mkdocs.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Json Web Token";
+        var mkdocs_page_input_path = "JWT_guide.md";
+        var mkdocs_page_url = "/JWT_guide/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Gestion de Plancher Mobile
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../README_/">Introduction ➠ ReadMe</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Rules_all_with_mkdocs/">Un pour les gouverner tous! ➠ mkdocs</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Json Web Token</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des matières</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction-aux-jwt">Introduction aux JWT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#structure-dun-jwt">Structure d'un JWT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utilisation-des-jwt">Utilisation des JWT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#securite-des-jwt">Sécurité des JWT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#exemple-pratique">Exemple pratique</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tableaux">Tableaux</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#signatures-jwt-et-leur-description">Signatures JWT et Leur Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#claims-jwt-et-leur-description">Claims JWT et Leur Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#claims-jwt-publics">Claims JWT Publics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#claims-jwt-prives">Claims JWT Privés</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erreurs-courantes-avec-les-jwt">Erreurs Courantes avec les JWT</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#meilleures-pratiques-pour-les-jwt">Meilleures Pratiques pour les JWT</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#informations-quon-peut-mettre-dans-un-token">Informations qu’on peut mettre dans un token</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#difference-entre-token-d-authentification-et-token-d-autorisation">Difference entre Token d authentification et Token d autorisation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#processus-de-gestion-des-permissions-dans-une-application-react-native-avec-api-nodejs">Processus de Gestion des Permissions dans une Application React Native avec API Node.js</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-authentification-utilisateur">1. Authentification utilisateur</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-envoi-du-token">2. Envoi du token</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-requetes-avec-autorisation">3. Requêtes avec autorisation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-verification-des-permissions">4. Vérification des permissions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-autorisation">5. Autorisation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sources">Sources</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Référence</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../reference/api.md">API</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../reference/commands.md">Commandes</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../about.md">À propos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Gestion de Plancher Mobile</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guides</li>
+      <li class="breadcrumb-item active">Json Web Token</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification/edit/master/docs/JWT_guide.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="guide-sur-les-json-web-tokens-jwt">Guide sur les JSON Web Tokens (JWT)</h1>
+<p>Ce guide explique en détail ce qu'est un JSON Web Token (JWT), comment il fonctionne et comment l'utiliser dans vos applications.</p>
+<h2 id="table-des-matieres">Table des matières</h2>
+<ol>
+<li><a href="#introduction-aux-jwt">Introduction aux JWT</a></li>
+<li><a href="#structure-dun-jwt">Structure d'un JWT</a></li>
+<li><a href="#utilisation-des-jwt">Utilisation des JWT</a></li>
+<li><a href="#sécurité-des-jwt">Sécurité des JWT</a></li>
+<li><a href="#exemple-pratique">Exemple pratique</a></li>
+<li><a href="#exemples-de-signatures-jwt-et-leur-description">Signatures JWT et Leur Description</a></li>
+<li><a href="#exemples-de-claims-jwt-et-leur-description">Claims JWT et Leur Description</a></li>
+<li><a href="#exemples-de-claims-jwt-publics">Claims JWT Publics</a></li>
+<li><a href="#exemples-de-claims-jwt-privés">Claims JWT Privés</a></li>
+<li><a href="#erreurs-courantes-avec-les-jwt">Erreurs Courantes avec les JWT</a></li>
+<li><a href="#meilleures-pratiques-pour-les-jwt">Meilleures Pratiques pour les JWT</a></li>
+<li><a href="#Informations-quon-peut-mettre-dans-un-token">Informations qu’on peut mettre dans un token</a></li>
+<li><a href="#difference-entre-token-dauthentification-et-token-dautorisation">Différence entre Token d'authentification et Token d'autorisation</a></li>
+<li><a href="#processus-de-gestion-des-permissions-dans-une-application-react-native-avec-api-nodejs">Processus de Gestion des Permissions dans une Application React Native avec API Node.js</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#sources">Sources</a></li>
+</ol>
+<hr />
+<h2 id="introduction-aux-jwt">Introduction aux JWT</h2>
+<p>Contexte Historique : Les JSON Web Tokens (JWT) ont été introduits en 2014 par le groupe de travail JWT au sein de l'IETF (Internet Engineering Task Force). JWT est une spécification qui est devenue un standard ouvert pour le transfert sécurisé d'informations entre deux parties. Avec l'augmentation des API web et des applications distribuées, JWT est devenu un choix populaire pour l'authentification et l'échange de données, grâce à sa simplicité et à sa capacité à transporter des informations de manière sécurisée.  </p>
+<p>Un JSON Web Token (JWT) est un format de jeton ouvert qui permet la transmission sécurisée d'informations entre deux parties sous la forme d'un objet JSON. Ces informations sont signées numériquement pour garantir l'authenticité et l'intégrité des données.  </p>
+<p>Cas d'Utilisation : Les JWT sont largement utilisés dans divers scénarios, notamment :  </p>
+<ul>
+<li>Authentification d'API : Permet aux clients de se connecter à un serveur et d'accéder aux ressources protégées sans avoir à se réauthentifier à chaque demande.</li>
+<li>
+<p>Single Sign-On (SSO) : Facilite l'authentification unique entre plusieurs applications ou services.<br />
+  Stateless : <em>Pas besoin de stocker les sessions sur le serveur.</em>  </p>
+</li>
+<li>
+<p>Échange de Données : Transfert sécurisé de données entre différentes parties ou systèmes.  </p>
+</li>
+</ul>
+<h2 id="structure-dun-jwt">Structure d'un JWT</h2>
+<p>Un JWT est composé de trois parties séparées par des points :  </p>
+<ol>
+<li><strong>Header</strong> : Contient le type (typ) de token (JWT) et l'algorithme de signature (alg).  </li>
+<li><strong>Payload</strong> : Contient les revendications (claims) document Json, c'est-à-dire les informations à transmettre.<br />
+    C'est l'emplacement ou est précisé les dates de création et d'expiration du token.<br />
+    Exemple: (exp = expiration en timestamp    "exp": 1647807974)  </li>
+<li><strong>Signature</strong> : Vérifie que le contenu n'a pas été altéré. Signé avec un secret que seul le server connaît.  <br />
+<img alt="Structure" src="../assets/images/JWT_guide/Structured%27un%20JWL.png" />  </li>
+</ol>
+<p>Décodage d'un JWT : Pour décoder un JWT, vous pouvez utiliser des outils en ligne comme <a href="https://jwt.io/">Décryptage et vérification JWT via jwt.io</a> qui permettent de visualiser les parties Header, Payload, et Signature du token. Vous pouvez également utiliser des bibliothèques spécifiques dans divers langages de programmation pour décoder et vérifier les JWT.</p>
+<h2 id="utilisation-des-jwt">Utilisation des JWT</h2>
+<p>Les JWT sont souvent utilisés pour :
+- <strong>Authentification</strong> : Ils permettent à un utilisateur de se connecter une fois et de continuer à accéder aux ressources sans avoir à se reconnecter à chaque requête.
+- <strong>Échange d'information sécurisé</strong> : Le contenu d'un JWT peut être signé et éventuellement chiffré.</p>
+<p><img alt="Utilisation" src="../assets/images/JWT_guide/jwt-workflow.png" /></p>
+<h2 id="securite-des-jwt">Sécurité des JWT</h2>
+<p>Bien que les JWT soient pratiques, il est essentiel de les utiliser correctement pour garantir la sécurité :  </p>
+<ul>
+<li><strong>Stockage Sécurisé des Clés</strong> : Utilisez des systèmes de gestion des secrets ou des environnements sécurisés pour stocker les clés secrètes utilisées pour signer les JWT.</li>
+<li><strong>Rotation des Clés</strong> : Mettez en place une stratégie de rotation régulière des clés pour minimiser le risque d'exposition en cas de compromission.</li>
+<li><strong>Expiration des Tokens</strong> : Définissez une période d'expiration appropriée pour vos JWT afin de limiter la durée pendant laquelle un token peut être utilisé en cas de compromission.</li>
+<li><strong>Régénération des Tokens</strong> : Utilisez des mécanismes pour renouveler les tokens expirés, comme les tokens de rafraîchissement, pour maintenir l'accès sans nécessiter une nouvelle authentification complète.</li>
+<li><strong>Évitez le Stockage Local</strong> : Ne stockez pas de JWT sensibles dans le stockage local du navigateur ; utilisez des cookies sécurisés et HTTP-only si vous devez stocker des tokens.</li>
+<li><strong>Utilisez HTTPS</strong> : Assurez-vous que toutes les communications impliquant des JWT sont protégées par HTTPS pour éviter les attaques de type "man-in-the-middle".</li>
+<li><strong>Invalider les Tokens</strong> : Assurez-vous d'avoir un mécanisme pour invalider les tokens si nécessaire.</li>
+</ul>
+<h2 id="exemple-pratique">Exemple pratique</h2>
+<p>Voici comment générer un JWT en utilisant la bibliothèque <code>jsonwebtoken</code> en Node.js :</p>
+<pre><code class="language-javascript">const jwt = require('jsonwebtoken');
+const token = jwt.sign({ userId: 123 }, 'secret_key', { expiresIn: '1h' });
+console.log(token);
+</code></pre>
+<p><img alt="Fonctionnement" src="../assets/images/JWT_guide/exemple-login.jpg" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé de données, mais ils doivent être utilisés avec prudence pour éviter des failles de sécurité. Prenez soin de toujours protéger vos tokens et de suivre les meilleures pratiques en matière de sécurité.<br />
+<a href="https://auth0.com/docs/secure/tokens/token-best-practices">JWT Security Best Practices - Auth0</a></p>
+<h2 id="tableaux">Tableaux</h2>
+<h3 id="signatures-jwt-et-leur-description">Signatures JWT et Leur Description</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Exemple de Signature JWT</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HS256</code></td>
+<td>HMAC avec SHA-256, un algorithme de hachage symétrique utilisé pour la signature.</td>
+</tr>
+<tr>
+<td><code>RS256</code></td>
+<td>RSA avec SHA-256, un algorithme de hachage asymétrique qui utilise une paire de clés publique et privée.</td>
+</tr>
+<tr>
+<td><code>ES256</code></td>
+<td>ECDSA avec SHA-256, une signature numérique basée sur la cryptographie elliptique.</td>
+</tr>
+<tr>
+<td><code>PS256</code></td>
+<td>RSA-PSS avec SHA-256, une variante de RSA pour des signatures plus sécurisées.</td>
+</tr>
+<tr>
+<td><code>EdDSA</code></td>
+<td>Utilise les courbes de Edwards pour des signatures rapides et sécurisées, souvent <code>Ed25519</code>.</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>Pas de signature, utilisé pour les JWT non signés, généralement déconseillé pour la sécurité.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="claims-jwt-et-leur-description">Claims JWT et Leur Description</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Claim JWT</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alg</code></td>
+<td><strong>Algorithm</strong> : Spécifie l'algorithme de signature utilisé pour le JWT (par exemple, HS256, RS256).</td>
+</tr>
+<tr>
+<td><code>cty</code></td>
+<td><strong>Content Type</strong> : Indique le type de contenu du JWT, souvent utilisé pour préciser le type du payload.</td>
+</tr>
+<tr>
+<td><code>typ</code></td>
+<td><strong>Type</strong> : Spécifie le type de jeton, par exemple "JWT" pour un JSON Web Token.</td>
+</tr>
+<tr>
+<td><code>kid</code></td>
+<td><strong>Key ID</strong> : Identifiant de la clé utilisée pour signer le jeton, utile pour gérer plusieurs clés.</td>
+</tr>
+<tr>
+<td><code>iss</code></td>
+<td><strong>Issuer</strong> : Identifie l'émetteur du jeton.</td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td><strong>Subject</strong> : Identifie le sujet du jeton, souvent l'utilisateur ou l'entité à laquelle le jeton se réfère.</td>
+</tr>
+<tr>
+<td><code>exp</code></td>
+<td><strong>Expires At</strong> : Spécifie la date et l'heure d'expiration du jeton, après laquelle il ne sera plus valide.</td>
+</tr>
+<tr>
+<td><code>nbf</code></td>
+<td><strong>Not Before</strong> : Spécifie la date et l'heure avant laquelle le jeton ne devrait pas être accepté.</td>
+</tr>
+<tr>
+<td><code>iat</code></td>
+<td><strong>Issued At</strong> : Spécifie la date et l'heure à laquelle le jeton a été émis.</td>
+</tr>
+<tr>
+<td><code>jti</code></td>
+<td><strong>JWT ID</strong> : Identifiant unique pour le jeton, souvent utilisé pour éviter les rejets de jetons.</td>
+</tr>
+<tr>
+<td><code>aud</code></td>
+<td><strong>Audience</strong> : Spécifie le ou les destinataires pour lesquels le jeton est destiné.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="claims-jwt-publics">Claims JWT Publics</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Claim JWT</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Adresse e-mail de l'utilisateur.</td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Nom d'utilisateur.</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>Rôle ou privilèges de l'utilisateur (par exemple, "admin", "user").</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Nom complet de l'utilisateur.</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>Portée ou les permissions accordées par le jeton.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="claims-jwt-prives">Claims JWT Privés</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Claim JWT</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>Identifiant unique de l'utilisateur dans votre base de données.</td>
+</tr>
+<tr>
+<td><code>department</code></td>
+<td>Département ou section de l'organisation à laquelle l'utilisateur appartient.</td>
+</tr>
+<tr>
+<td><code>custom_claim</code></td>
+<td>Toute autre donnée personnalisée ajoutée au jeton en fonction des besoins spécifiques de l'application.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erreurs-courantes-avec-les-jwt">Erreurs Courantes avec les JWT</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Erreur</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Invalid Token</code></td>
+<td>Le jeton est invalide ou malformé.</td>
+</tr>
+<tr>
+<td><code>Token Expired</code></td>
+<td>Le jeton a expiré et n'est plus valide.</td>
+</tr>
+<tr>
+<td><code>Token Not Yet Valid</code></td>
+<td>Le jeton est utilisé avant sa date de validité.</td>
+</tr>
+<tr>
+<td><code>Signature Verification Failed</code></td>
+<td>La signature du jeton ne correspond pas, indiquant une possible falsification ou une clé incorrecte.</td>
+</tr>
+<tr>
+<td><code>Missing Claim</code></td>
+<td>Un claim requis est absent dans le jeton.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="meilleures-pratiques-pour-les-jwt">Meilleures Pratiques pour les JWT</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Pratique</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Utiliser HTTPS</strong></td>
+<td>Toujours utiliser HTTPS pour transmettre les JWT afin de protéger les données en transit.</td>
+</tr>
+<tr>
+<td><strong>Expiration</strong></td>
+<td>Définir une date d'expiration appropriée pour les jetons afin de limiter leur durée de validité.</td>
+</tr>
+<tr>
+<td><strong>Rotation des Clés</strong></td>
+<td>Régulièrement faire tourner les clés de signature pour améliorer la sécurité.</td>
+</tr>
+<tr>
+<td><strong>Validation des Claims</strong></td>
+<td>Toujours valider les claims du JWT (comme <code>exp</code>, <code>nbf</code>, <code>aud</code>) pour s'assurer de leur légitimité.</td>
+</tr>
+<tr>
+<td><strong>Utiliser des Algorithmes Sécurisés</strong></td>
+<td>Choisir des algorithmes de signature sécurisés comme RS256 ou ES256 au lieu de <code>none</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="informations-quon-peut-mettre-dans-un-token">Informations qu’on peut mettre dans un token</h2>
+<p>Un JWT (JSON Web Token) peut contenir plusieurs informations dans ses <strong>claims</strong> :</p>
+<ul>
+<li><strong>Registered claims</strong> : </li>
+<li><code>iss</code> (issuer) : l'émetteur du token.</li>
+<li><code>sub</code> (subject) : l'identité du sujet (généralement un utilisateur).</li>
+<li><code>exp</code> (expiration) : la date d'expiration du token.</li>
+<li><code>iat</code> (issued at) : la date de création du token.</li>
+<li><strong>Public claims</strong> : des informations personnalisées comme le nom d'utilisateur, le rôle, l'e-mail.</li>
+<li><strong>Private claims</strong> : des données définies par l'émetteur et le récepteur pour des besoins spécifiques.  </li>
+</ul>
+<h2 id="difference-entre-token-d-authentification-et-token-d-autorisation">Difference entre Token d authentification et Token d autorisation</h2>
+<ul>
+<li><strong>Token d'authentification</strong> :</li>
+<li>Utilisé pour vérifier l'identité de l'utilisateur.</li>
+<li>Fournit un accès à l'application après une connexion réussie.</li>
+<li>
+<p>Exemple : Un token pour confirmer que l'utilisateur est bien celui qu'il prétend être.</p>
+</li>
+<li>
+<p><strong>Token d'autorisation</strong> :</p>
+</li>
+<li>Utilisé pour accorder ou limiter l'accès à certaines ressources ou actions spécifiques.</li>
+<li>Gère les permissions (ce que l'utilisateur peut ou ne peut pas faire).</li>
+<li>Exemple : Un token indiquant si l'utilisateur peut accéder à une API particulière.</li>
+</ul>
+<h2 id="processus-de-gestion-des-permissions-dans-une-application-react-native-avec-api-nodejs">Processus de Gestion des Permissions dans une Application React Native avec API Node.js</h2>
+<p>La gestion des permissions dans une application React Native utilisant une API Node.js et une base de données SQL suit généralement ces étapes :</p>
+<h3 id="1-authentification-utilisateur">1. Authentification utilisateur</h3>
+<ul>
+<li><strong>Connexion</strong> : L'utilisateur se connecte via l'application React Native (par exemple, avec un formulaire).</li>
+<li><strong>Vérification</strong> : L'API Node.js vérifie les informations d'identification dans la base de données SQL et génère un token JWT.</li>
+</ul>
+<h3 id="2-envoi-du-token">2. Envoi du token</h3>
+<ul>
+<li><strong>Renvoi du token</strong> : Après une connexion réussie, le token JWT est renvoyé au client (React Native) et stocké en local (local storage ou secure storage).</li>
+</ul>
+<h3 id="3-requetes-avec-autorisation">3. Requêtes avec autorisation</h3>
+<ul>
+<li><strong>Envoi du token</strong> : Pour chaque requête nécessitant une permission, le client envoie le token JWT dans les headers de la requête (généralement dans le header <code>Authorization</code>).</li>
+</ul>
+<h3 id="4-verification-des-permissions">4. Vérification des permissions</h3>
+<ul>
+<li><strong>Validation du token</strong> : L'API Node.js vérifie le token JWT pour confirmer l'identité de l'utilisateur et récupérer les permissions associées.</li>
+<li><strong>Permissions en base</strong> : Les permissions peuvent être stockées dans la base de données SQL (par exemple, les rôles ou droits de l'utilisateur).</li>
+</ul>
+<h3 id="5-autorisation">5. Autorisation</h3>
+<ul>
+<li><strong>Comparaison des permissions</strong> : L'API Node.js compare les permissions de l'utilisateur avec l'action demandée. Si l'utilisateur est autorisé, la requête est traitée ; sinon, une erreur est renvoyée (403 Forbidden).</li>
+</ul>
+<p><strong>Exemple</strong> : Un utilisateur avec un rôle "admin" peut accéder à des routes spécifiques de l'API (comme la gestion d'utilisateurs), tandis qu'un utilisateur avec un rôle "user" n'a accès qu'à des fonctionnalités basiques.  </p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>https://www.youtube.com/watch?v=5qNfPBcogCs</li>
+<li>https://www.atatus.com/blog/jwt-authentication-when-and-how-to-use-it/</li>
+<li>https://medium.com/@adesinabolaji/fundamentals-of-jwt-json-web-token-bafb2cfbd159</li>
+<li>https://jwt.io/introduction</li>
+<li>https://redis.io/blog/json-web-tokens-jwt-are-dangerous-for-user-sessions/</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Rules_all_with_mkdocs/" class="btn btn-neutral float-left" title="Un pour les gouverner tous! ➠ mkdocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Rules_all_with_mkdocs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

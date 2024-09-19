@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="La triade du tonnerre" /><link rel="canonical" href="https://ton-site.com/Rules_all_with_mkdocs/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Un pour les gouverner tous! ➠ mkdocs - Gestion de Plancher Mobile</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/css/mkdocs.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Un pour les gouverner tous! \u27a0 mkdocs";
+        var mkdocs_page_input_path = "Rules_all_with_mkdocs.md";
+        var mkdocs_page_url = "/Rules_all_with_mkdocs/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Gestion de Plancher Mobile
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Guides</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../README_/">Introduction ➠ ReadMe</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Un pour les gouverner tous! ➠ mkdocs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-des-matieres">Table des Matières</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#introduction-a-mkdocs">Introduction à MkDocs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fonctionnalites-principales-de-mkdocs">Fonctionnalités Principales de MkDocs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#commande">Commande</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-de-mkdocs">Installation de MkDocs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-installer-mkdocs">1. Installer MkDocs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-installer-le-theme-material-optionnel">2. Installer le Thème Material (Optionnel)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-creer-un-nouveau-projet-mkdocs">3. Créer un Nouveau Projet MkDocs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-structure-dun-projet-mkdocs">4. Structure d'un Projet MkDocs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-configuration-du-fichier-mkdocsyml">5. Configuration du Fichier mkdocs.yml</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-configuration-basique">1. Configuration Basique</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-navigation">2. Navigation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-theme-et-apparence">3. Thème et Apparence</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-extensions-markdown">4. Extensions Markdown</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5-personnalisation-avec-css-et-javascript">5. Personnalisation avec CSS et JavaScript</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-generer-et-visualiser-la-documentation">6. Générer et Visualiser la Documentation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-lancer-le-serveur-de-developpement">1. Lancer le Serveur de Développement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-generer-les-fichiers-statics">2. Générer les Fichiers Statics</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-initialisez-un-depot-git-dans-votre-projet">3. Initialisez un dépôt Git dans votre projet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-deployez-sur-github-pages-avec-la-commande-suivante">4. Déployez sur GitHub Pages avec la commande suivante</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../JWT_guide/">Json Web Token</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Référence</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../reference/api.md">API</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../reference/commands.md">Commandes</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../about.md">À propos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Gestion de Plancher Mobile</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Guides</li>
+      <li class="breadcrumb-item active">Un pour les gouverner tous! ➠ mkdocs</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification/edit/master/docs/Rules_all_with_mkdocs.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="guide-complet-pour-linstallation-et-lutilisation-de-mkdocs">Guide Complet pour l'Installation et l'Utilisation de MkDocs</h1>
+<h2 id="table-des-matieres">Table des Matières</h2>
+<ol>
+<li><a href="#introduction-à-mkdocs">Introduction à MkDocs</a></li>
+<li><a href="#fonctionnalités-principales-de-mkdocs">Fonctionnalités Principales de MkDocs</a></li>
+<li><a href="#commande">Commandes et Description</a></li>
+<li><a href="#prerequis">Prérequis</a></li>
+<li><a href="#installation-de-mkdocs">Installation de MkDocs</a></li>
+<li><a href="#1-installer-mkdocs">Installation de MkDocs</a></li>
+<li><a href="#2-installer-le-theme-material-optionnel">Installation du Thème Material (Optionnel)</a></li>
+<li><a href="#3-creer-un-nouveau-projet-mkdocs">Créer un Nouveau Projet MkDocs</a></li>
+<li><a href="#structure-dun-projet-mkdocs">Structure d'un Projet MkDocs</a></li>
+<li><a href="#configuration-du-fichier-mkdocsyml">Configuration du Fichier <code>mkdocs.yml</code></a></li>
+<li><a href="#1-configuration-basique">Configuration Basique</a></li>
+<li><a href="#2-navigation">Navigation</a></li>
+<li><a href="#3-theme-et-apparence">Thème et Apparence</a></li>
+<li><a href="#4-extensions-markdown">Extensions Markdown</a></li>
+<li><a href="#5-personnalisation-avec-css-et-javascript">Personnalisation avec CSS et JavaScript</a></li>
+<li><a href="#generer-et-visualiser-la-documentation">Générer et Visualiser la Documentation</a></li>
+<li><a href="#1-lancer-le-serveur-de-developpement">Lancer le Serveur de Développement</a></li>
+<li><a href="#2-generer-les-fichiers-statics">Générer les Fichiers Statics</a></li>
+<li><a href="#deployez-sur-GitHub-Pages-avec-la-commande-suivante">Déploiement de la Documentation</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+<hr />
+<h2 id="introduction-a-mkdocs">Introduction à MkDocs</h2>
+<p><strong>MkDocs</strong> est un outil open-source utilisé pour générer des sites de documentation statiques à partir de fichiers Markdown. Il est simple à utiliser, flexible, et offre une configuration minimale via un fichier YAML ou YML.</p>
+<h2 id="fonctionnalites-principales-de-mkdocs">Fonctionnalités Principales de MkDocs</h2>
+<ul>
+<li><strong>Facilité d'utilisation</strong> : Écrivez vos documents en Markdown et générez un site complet.</li>
+<li><strong>Support des thèmes</strong> : Utilisez différents thèmes comme le populaire thème <strong>Material</strong> pour personnaliser l'apparence.</li>
+<li><strong>Navigation automatique</strong> : MkDocs organise automatiquement la structure de vos fichiers pour créer des menus de navigation.</li>
+<li><strong>Extensions Markdown</strong> : Ajoutez des fonctionnalités comme les tables des matières, les notes de bas de page, et la coloration syntaxique du code.</li>
+</ul>
+<h2 id="commande">Commande</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pip install mkdocs</code></td>
+<td>Installe MkDocs de base sans thème supplémentaire.</td>
+</tr>
+<tr>
+<td><code>pip install mkdocs-material</code></td>
+<td>Installe le thème Material pour MkDocs.</td>
+</tr>
+<tr>
+<td><code>mkdocs new my-project</code></td>
+<td>Crée un nouveau projet MkDocs dans le répertoire <code>my-project</code>.</td>
+</tr>
+<tr>
+<td><code>cd my-project</code></td>
+<td>Accède au répertoire du nouveau projet.</td>
+</tr>
+<tr>
+<td><code>mkdocs build</code></td>
+<td>Génère les fichiers statiques du site prêt pour la production.</td>
+</tr>
+<tr>
+<td><code>mkdocs serve</code></td>
+<td>Lance le serveur de développement local pour prévisualiser le site MkDocs.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Fonctionnalité / Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mkdocs.yml</code></td>
+<td>Fichier de configuration principal pour personnaliser MkDocs (titre, thème, navigation, etc.).</td>
+</tr>
+<tr>
+<td><code>theme: 'material'</code></td>
+<td>Ajoute le thème Material dans le fichier <code>mkdocs.yml</code> sous la section <code>theme:</code>.</td>
+</tr>
+<tr>
+<td><code>nav:</code></td>
+<td>Définir la navigation du site dans <code>mkdocs.yml</code> pour organiser les pages et chapitres.</td>
+</tr>
+<tr>
+<td><code>extra_css:</code></td>
+<td>Ajoute des fichiers CSS personnalisés pour ajuster le style du site dans <code>mkdocs.yml</code>.</td>
+</tr>
+<tr>
+<td><code>extra_javascript:</code></td>
+<td>Ajoute des fichiers JavaScript supplémentaires dans <code>mkdocs.yml</code>.</td>
+</tr>
+<tr>
+<td><code>pip install mkdocs-material-extensions</code></td>
+<td>Installe des extensions pour améliorer les fonctionnalités du thème Material.</td>
+</tr>
+<tr>
+<td><code>mkdocs gh-deploy</code></td>
+<td>Déploie le site généré sur GitHub Pages directement.</td>
+</tr>
+<tr>
+<td><code>plugins:</code></td>
+<td>Ajoute des plugins dans <code>mkdocs.yml</code> pour des fonctionnalités supplémentaires comme la recherche.</td>
+</tr>
+<tr>
+<td><code>docs/</code></td>
+<td>Répertoire où placer vos fichiers Markdown qui composeront les pages du site.</td>
+</tr>
+<tr>
+<td><code>mkdocs serve --dirtyreload</code></td>
+<td>Lance un serveur de développement avec rechargement rapide des modifications locales.</td>
+</tr>
+<tr>
+<td><code>mkdocs build --clean</code></td>
+<td>Supprime les fichiers générés précédemment et construit à nouveau les fichiers du site.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequis">Prérequis</h2>
+<p>Avant d'installer MkDocs, assurez-vous d'avoir les éléments suivants installés sur votre machine :</p>
+<ul>
+<li>
+<p><a href="https://www.python.org/downloads">Python 3.6 ou version ultérieure </a></p>
+</li>
+<li>
+<p>Pip (gestionnaire de paquets Python)</p>
+</li>
+</ul>
+<h2 id="installation-de-mkdocs">Installation de MkDocs</h2>
+<h3 id="1-installer-mkdocs">1. Installer MkDocs</h3>
+<p>Pour installer MkDocs, exécutez la commande suivante dans votre terminal ou invite de commandes :</p>
+<pre><code class="language-bash">pip install mkdocs
+</code></pre>
+<h3 id="2-installer-le-theme-material-optionnel">2. Installer le Thème Material (Optionnel)</h3>
+<p>Le thème Material est un des thèmes les plus utilisés avec MkDocs. Pour l'installer, exécutez :</p>
+<pre><code class="language-bash">pip install mkdocs-material
+</code></pre>
+<h3 id="3-creer-un-nouveau-projet-mkdocs">3. Créer un Nouveau Projet MkDocs</h3>
+<p>Une fois que MkDocs est installé, vous pouvez créer un nouveau projet en utilisant la commande suivante :</p>
+<pre><code class="language-bash">mkdocs new mon_projet
+</code></pre>
+<p>Cette commande va générer un répertoire mon_projet avec la structure de base suivante :</p>
+<pre><code>mon_projet/
+    mkdocs.yml  
+    docs/  
+        index.md  
+</code></pre>
+<ul>
+<li>mkdocs.yml : Le fichier de configuration de MkDocs.  </li>
+<li>docs/ : Ce répertoire contiendra tous vos fichiers Markdown pour la documentation.</li>
+</ul>
+<h3 id="4-structure-dun-projet-mkdocs">4. Structure d'un Projet MkDocs</h3>
+<p>Voici un aperçu de la structure typique d'un projet MkDocs :</p>
+<pre><code>mon_projet/
+    mkdocs.yml         # Fichier de configuration principal
+    docs/              # Dossier contenant la documentation
+        index.md       # Page d'accueil de votre documentation
+        installation.md
+        guide_utilisation.md
+        reference.md
+</code></pre>
+<h3 id="5-configuration-du-fichier-mkdocsyml">5. Configuration du Fichier mkdocs.yml</h3>
+<h5 id="1-configuration-basique">1. Configuration Basique</h5>
+<p>Le fichier mkdocs.yml est où vous définissez la plupart des options de configuration de votre site de documentation. Voici un exemple simple :</p>
+<pre><code>site_name: Ma Documentation
+theme: 
+  name: readthedocs
+</code></pre>
+<ul>
+<li>site_name : Le nom de votre site.  </li>
+<li>theme : Définit le thème utilisé (ici, le thème Material).  </li>
+</ul>
+<h5 id="2-navigation">2. Navigation</h5>
+<p>La navigation dans MkDocs est définie dans la section nav du fichier mkdocs.yml. Vous pouvez créer des menus avec plusieurs niveaux :</p>
+<pre><code>nav:
+  - Accueil: index.md
+  - Guide:
+      - Installation: installation.md
+      - Utilisation: guide_utilisation.md
+  - Référence: reference.md
+</code></pre>
+<h5 id="3-theme-et-apparence">3. Thème et Apparence</h5>
+<p>Vous pouvez personnaliser le thème et l'apparence de votre site en modifiant le fichier mkdocs.yml :</p>
+<pre><code>theme:
+  name: readthedocs
+  palette:
+    primary: 'indigo'
+    accent: 'pink'
+</code></pre>
+<h5 id="4-extensions-markdown">4. Extensions Markdown</h5>
+<p>MkDocs supporte plusieurs extensions Markdown qui ajoutent des fonctionnalités supplémentaires :</p>
+<pre><code>markdown_extensions:
+  - toc:       # Génère des tables des matières automatiques
+      permalink: true
+  - admonition  # Permet l'ajout de blocs de texte attentionnels (ex. info, warning)
+  - codehilite # Coloration syntaxique pour les blocs de code
+</code></pre>
+<h5 id="5-personnalisation-avec-css-et-javascript">5. Personnalisation avec CSS et JavaScript</h5>
+<p>Vous pouvez également ajouter des fichiers CSS ou JavaScript personnalisés :</p>
+<pre><code>extra_css:
+  - 'css/custom.css'
+
+extra_javascript:
+  - 'js/custom.js'
+</code></pre>
+<h3 id="6-generer-et-visualiser-la-documentation">6. Générer et Visualiser la Documentation</h3>
+<h5 id="1-lancer-le-serveur-de-developpement">1. Lancer le Serveur de Développement</h5>
+<p>Pour voir votre documentation en cours de développement, lancez le serveur de développement local :</p>
+<pre><code>mkdocs serve
+</code></pre>
+<p>Cela lancera un serveur à l'adresse http://127.0.0.1:8000/, où vous pourrez voir les changements en temps réel.</p>
+<h5 id="2-generer-les-fichiers-statics">2. Générer les Fichiers Statics</h5>
+<p>Lorsque vous êtes prêt à déployer votre site, générez les fichiers statiques en exécutant :</p>
+<pre><code>mkdocs build
+</code></pre>
+<p>Cela créera un répertoire site/ contenant les fichiers HTML statiques.</p>
+<p>Déploiement de la Documentation
+Vous pouvez déployer votre documentation générée sur n'importe quel serveur d'hébergement de sites statiques. Si vous utilisez GitHub Pages, voici comment faire :</p>
+<h5 id="3-initialisez-un-depot-git-dans-votre-projet">3. Initialisez un dépôt Git dans votre projet</h5>
+<p>Ajoutez vos fichiers et validez les changements :</p>
+<pre><code>git add .
+git commit -m &quot;Ajout de la documentation&quot;
+</code></pre>
+<h5 id="4-deployez-sur-github-pages-avec-la-commande-suivante">4. Déployez sur GitHub Pages avec la commande suivante</h5>
+<pre><code>mkdocs gh-deploy
+</code></pre>
+<p>Cela publiera votre site directement sur GitHub Pages.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>MkDocs est un outil simple et puissant pour créer de la documentation statique. Grâce à sa facilité d'installation et à sa flexibilité via les fichiers Markdown, il est idéal pour documenter des projets de toutes tailles. Vous pouvez approfondir votre utilisation en explorant les différentes options et thèmes disponibles, ainsi que les documents officiels de MkDocs.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../README_/" class="btn btn-neutral float-left" title="Introduction ➠ ReadMe"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../JWT_guide/" class="btn btn-neutral float-right" title="Json Web Token">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../README_/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../JWT_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

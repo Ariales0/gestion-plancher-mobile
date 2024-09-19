@@ -1,0 +1,49 @@
+# Fichier mkdocs.yml
+
+site_name: "Gestion de Plancher Mobile"
+site_description: "Une description professionnelle"
+site_author: "La triade du tonnerre"
+docs_dir: src/docs
+site_url: "https://ton-site.com"
+repo_url: "https://github.com/Ariales0/gestion-plancher-mobile/tree/iteration-JWT-Authentification"
+
+theme:
+  name: readthedocs
+  # Configuration du thème
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+    logo: 'logo.png'  # Lien vers un logo personnalisé (optionnel)
+  favicon: assets/favicon.ico  # Favicon (optionnel)
+  
+nav:
+  - Accueil: index.md
+  - Guides:
+      - "Introduction ➠ ReadMe": README_.md
+      - "Un pour les gouverner tous! ➠ mkdocs": Rules_all_with_mkdocs.md
+      - "Json Web Token": JWT_guide.md
+
+  - Référence:
+      - API: scr/docs/reference/api.md
+      - Commandes: scr/docs/reference/commands.md
+  - À propos: about.md
+
+# Options supplémentaires
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ton-repo
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ton-compte
+
+# Ajout du fichier CSS personnalisé
+extra_css:
+  - assets/css/mkdocs.css
