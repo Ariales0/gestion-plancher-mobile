@@ -200,6 +200,42 @@ mkdocs gh-deploy
 ```
 Cela publiera votre site directement sur GitHub Pages.
 
+
+### 7. Intégrer Swagger directement via un plugin MkDocs
+
+Si tu veux héberger le Swagger directement au sein de MkDocs sans avoir besoin d'un lien externe, tu peux utiliser un plugin comme mkdocs-swagger-ui-tag.
+
+##### 1. Installer le plugin en exécutant :
+```
+pip install mkdocs-swagger-ui-tag
+
+```
+##### 2. Ajouter la configuration dans ton fichier mkdocs.yml :
+```
+plugins:  
+  - swagger-ui:      
+      swagger_path: reference/api.yaml  # ton fichier OpenAPI
+        url_prefix: swagger  # le préfixe d'URL sous lequel Swagger sera disponible
+```
+Ensuite, tu pourras accéder à Swagger via https://ton-site.com/swagger.
+
+##### 3. Mettre à jour ton fichier de navigation (mkdocs.yml):
+Si nécessaire pour ajouter une entrée pointant vers Swagger :
+```
+nav:
+  - Accueil: index.md
+  - Guides:
+      - "Introduction ➠ ReadMe": README_.md
+      - "Un pour les gouverner tous! ➠ mkdocs": Rules_all_with_mkdocs.md
+      - "Json Web Token": JWT_guide.md
+  - Référence:
+      - API: reference/api.md
+      - Swagger API: swagger/  # <-- ajout ici pour Swagger
+      - Commandes: reference/commands.md
+  - À propos: about.md
+```
+
+
 ### Conclusion
 MkDocs est un outil simple et puissant pour créer de la documentation statique. Grâce à sa facilité d'installation et à sa flexibilité via les fichiers Markdown, il est idéal pour documenter des projets de toutes tailles. Vous pouvez approfondir votre utilisation en explorant les différentes options et thèmes disponibles, ainsi que les documents officiels de MkDocs.
 

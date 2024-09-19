@@ -21,7 +21,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-    logo: 'ImSTEVE.png'  # Lien vers un logo personnalisé (optionnel)
+    logo: 'logo.png'  # Lien vers un logo personnalisé (optionnel)
   favicon: assets/favicon.ico  # Favicon (optionnel)
   
 nav:
@@ -32,8 +32,8 @@ nav:
       - "Json Web Token": JWT_guide.md
 
   - Référence:
-      - API: reference/api.md
-      - Commandes: reference/commands.md
+      - API: scr/docs/reference/api.md
+      - Commandes: scr/docs/reference/commands.md
   - À propos: about.md
 
 # Options supplémentaires
