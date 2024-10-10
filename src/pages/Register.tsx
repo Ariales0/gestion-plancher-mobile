@@ -2,7 +2,7 @@ import { Button, View, Text, TextInput, StyleSheet, TouchableOpacity, Image} fro
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
-const Réglages = ({ navigation }) => {
+const Register = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -12,11 +12,11 @@ const Réglages = ({ navigation }) => {
             resizeMode='contain'
           />
           <View style={styles.headerText}>
-            <TouchableOpacity onPress={() => navigation.navigate('Thermostats')}>
-              <Text style={styles.headerThermostats}>THERMOSTATS</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('')}>
+              <Text style={styles.headerThermostats}></Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Réglages')}>
-              <Text style={styles.headerReglage}>| RÉGLAGES</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('')}>
+              <Text style={styles.headerReglage}>| </Text>
             </TouchableOpacity>
           </View>
           {/* Barre horizontale sous le header */}
@@ -24,7 +24,19 @@ const Réglages = ({ navigation }) => {
       </View>
       {/* Formulaire */}
       <View style={styles.formContainer}>
-        <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 20, marginLeft: 10}} >Données d'Utilisateur</Text>
+        <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 20, marginLeft: 10}} >Veuillez remplir ces champs</Text>
+        <View style={styles.inputContainer}>
+          <View style={styles.inputEspacement}>
+            <TextInput style={styles.input} placeholder="Courriel" />
+            <Text style={styles.textUnderInput}>*Courriel</Text>
+          </View>
+          <View style={styles.inputEspacement}>
+            <TextInput style={[styles.input]} placeholder="Mot de passe" />
+            <Text style={styles.textUnderInput}>*Mot de passe</Text>
+          </View>
+        </View>
+
+
         <View style={styles.inputContainer}>
           <View style={styles.inputEspacement}>
             <TextInput style={styles.input} placeholder="Prénom" />
@@ -61,25 +73,15 @@ const Réglages = ({ navigation }) => {
             <Text style={styles.textUnderInput}>Pays</Text>
           </View>
         </View>
-        <View style={styles.inputContainer}>
-          <View style={styles.inputEspacement}>
-            <TextInput style={styles.input} placeholder="Courriel" />
-            <Text style={styles.textUnderInput}>*Courriel</Text>
-          </View>
-          <View style={styles.inputEspacement}>
-            <TextInput style={[styles.input]} placeholder="Mot de passe" />
-            <Text style={styles.textUnderInput}>*Mot de passe</Text>
-          </View>
-        </View>
         <View style={styles.boutonChoix}>
           <TouchableOpacity 
             style={[styles.button, {marginRight: 10}]}
             onPress={() => navigation.navigate('Thermostats')}>
-            <Text style={styles.buttonText}>Sauvegarder</Text>
+            <Text style={styles.buttonText}>Créer le compte</Text>
           </TouchableOpacity>
           <TouchableOpacity 
             style={styles.buttonGris}
-            onPress={() => navigation.navigate('Thermostats')}>
+            onPress={() => navigation.navigate('Login')}>
             <Text style={styles.buttonText}>Annuler</Text>
           </TouchableOpacity>
         </View>
@@ -190,11 +192,6 @@ const styles = StyleSheet.create({
     width: '50%',
     marginTop: 30
   },
-
-
-
-
-
   buttonText: {
     color: '#FFF',
     textAlign: 'center',
@@ -226,4 +223,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Réglages
+export default Register

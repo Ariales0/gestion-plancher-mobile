@@ -1,24 +1,24 @@
-import { Button, View, Text , StyleSheet, TouchableOpacity, Image, Alert} from 'react-native'
-import React from 'react'
+import { Button, View, Text, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
+import React, { useContext } from 'react';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-{/*const Thermostats = ({ navigation }) => { */}
+import { AuthContext } from '../context/AuthContext'; // Importez AuthContext
 
 type RootStackParamList = {
-  Thermostats: { username: string }; // Déclarez ici les paramètres que vous attendez dans la page Thermostats
+  Thermostats: { username: string };
 };
 
 type ThermostatsScreenRouteProp = RouteProp<RootStackParamList, 'Thermostats'>;
 
 const Thermostats = () => {
-  const route = useRoute<ThermostatsScreenRouteProp>(); // Récupérer les paramètres de la page précédente
-  const navigation = useNavigation(); 
+  const route = useRoute<ThermostatsScreenRouteProp>();
+  const navigation = useNavigation();
+  const { handleLogout } = useContext(AuthContext);
 
-  const { username } = route.params ||{ username: 'utilisateur inconnu'}; // Récupérer le nom d'utilisateur de la page précédente
+  const { username } = route.params || { username: 'utilisateur inconnu' };
   
-  const thermostatId = '1392250'
-  const thermostatName = 'bain'
+  const thermostatId = '1392250';
+  const thermostatName = 'bain';
 
   const handlePress = () => {
     Alert.alert(
@@ -27,7 +27,7 @@ const Thermostats = () => {
       [
         {
           text: 'Annuler',
-          onPress: () => console.log('Annulé'),
+          onPress: () => console.log(`Suppression du ${thermostatName} avec l'ID: ${thermostatId} Annulé`),
           style: 'cancel',
         },
         {
@@ -35,12 +35,16 @@ const Thermostats = () => {
           onPress: () => {
             console.log('Supprimé');
             // Placez ici la logique de suppression
-            // Par exemple, navigation.navigate('Thermostats') ou une autre action
           },
         },
       ],
-      { cancelable: true } // Optionnel : empêche de fermer l'alerte en appuyant en dehors de celle-ci
+      { cancelable: true }
     );
+  };
+
+  const handleLogoutPress = async () => {
+    await handleLogout();
+    navigation.navigate('Login');
   };
 
   return (
@@ -60,30 +64,29 @@ const Thermostats = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.headerRight}>
-          <Text style={styles.headerBienvenue}>Bienvenue, { username }</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.headerBienvenue}>Bienvenue, {username}</Text>
+          <TouchableOpacity onPress={handleLogoutPress}>
             <Text style={styles.headerDeconnection}>| Se déconnecter</Text>
           </TouchableOpacity>
         </View>
         {/* Barre horizontale sous le header */}
-        <View style={styles.headerBar1}/>
-        <View style={styles.headerBar2}/>
+        <View style={styles.headerBar1} />
+        <View style={styles.headerBar2} />
       </View>
       <View style={styles.thermostatsContainer}>
-        
-          <Image source={require('../assets/images/Thermostats-23.5.png')}/>
-        
+        <Image source={require('../assets/images/Thermostats-23.5.png')} />
         <View style={styles.infoThermostats}>
-          <View style={styles.nomDelete} >
+          <View style={styles.nomDelete}>
             <Text style={styles.text}>{thermostatName}</Text>
             <TouchableOpacity onPress={handlePress}>
               <Icon name="trash" size={30} color="#bababa" />
             </TouchableOpacity>
           </View>
-          <View style={styles.barre}/>
-          <View style={styles.nomDelete} >
+          <View style={styles.barre} />
+          <View style={styles.nomDelete}>
             <Text style={styles.text}>
-              ID Thermostat: <Text>{thermostatId}</Text></Text>
+              ID Thermostat: <Text>{thermostatId}</Text>
+            </Text>
           </View>
         </View>
       </View>
@@ -94,7 +97,7 @@ const Thermostats = () => {
         <Text style={styles.footerText} >Version: 1.01</Text>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({

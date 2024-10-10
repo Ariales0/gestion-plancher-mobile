@@ -30,6 +30,7 @@ nav:
       - "Introduction ➠ ReadMe": README_.md
       - "Un pour les gouverner tous! ➠ mkdocs": Rules_all_with_mkdocs.md
       - "Json Web Token": JWT_guide.md
+      - "Transition API MongoDB vers SQL": Transition_BD.md
 
   - Référence:
       - API: scr/docs/reference/api.md
