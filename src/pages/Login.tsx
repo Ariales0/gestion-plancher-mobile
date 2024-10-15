@@ -5,10 +5,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { loginUser } from '../services/api'; // Importez la fonction loginUser
 import { AuthContext } from '../context/AuthContext'; // Importez votre AuthContext
 
+
 const Login = () => {
   const navigation = useNavigation();
   const { authState } = useContext(AuthContext); // Récupérez l'état d'authentification depuis le contexte
- 
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -71,6 +72,7 @@ const Login = () => {
             <Text style={styles.buttonText}>Créer un compte</Text>
           </TouchableOpacity>
         </View>
+
       </View>
       {/* Footer */}
       <View style={styles.footer}>

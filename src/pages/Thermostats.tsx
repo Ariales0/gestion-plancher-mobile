@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { AuthContext } from '../context/AuthContext'; // Importez AuthContext
+import mqtt from 'mqtt';
 
 type RootStackParamList = {
   Thermostats: { username: string };
@@ -41,6 +42,8 @@ const Thermostats = () => {
       { cancelable: true }
     );
   };
+
+  //mqtt.connect('mqtt://test.mosquitto.org');
 
   const handleLogoutPress = async () => {
     await handleLogout();

@@ -28,11 +28,11 @@ const Réglages = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <View style={styles.inputEspacement}>
             <TextInput style={styles.input} placeholder="Prénom" />
-            <Text style={styles.textUnderInput}>*Prénom</Text>
+            <Text style={styles.textUnderInput}>Prénom</Text>
           </View>
           <View style={styles.inputEspacement}>
             <TextInput style={[styles.input]} placeholder="Nom de famille" />
-            <Text style={styles.textUnderInput}>*Nom de famille</Text>
+            <Text style={styles.textUnderInput}>Nom de famille</Text>
           </View>
         </View>
         <View style={styles.inputContainer}>
@@ -64,11 +64,11 @@ const Réglages = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <View style={styles.inputEspacement}>
             <TextInput style={styles.input} placeholder="Courriel" />
-            <Text style={styles.textUnderInput}>*Courriel</Text>
+            <Text style={styles.textUnderInput}>Courriel</Text>
           </View>
           <View style={styles.inputEspacement}>
             <TextInput style={[styles.input]} placeholder="Mot de passe" />
-            <Text style={styles.textUnderInput}>*Mot de passe</Text>
+            <Text style={styles.textUnderInput}>Mot de passe</Text>
           </View>
         </View>
         <View style={styles.boutonChoix}>
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     padding: 10,
     borderRadius: 5,
-    width: '50%',
+    width: '48%',
     marginTop: 30
   },
 
