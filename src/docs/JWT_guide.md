@@ -57,8 +57,29 @@ Les JWT sont souvent utilisés pour :
 
 ![Utilisation](assets/images/JWT_guide/jwt-workflow.png)
 
+## Type de JWT
 
+### App Token :
+  - Un app token est un jeton d'application, souvent utilisé pour identifier l'application elle-même auprès d'une API, plutôt qu'un utilisateur spécifique.
+  - Il est couramment utilisé dans les intégrations serveur-à-serveur ou pour les fonctionnalités globales d'une application (comme des informations publiques ou des statistiques).
+  - Par exemple, pour obtenir un accès basique aux API d'un service (comme Facebook ou Twitter), l’application peut utiliser un app token pour prouver son identité en tant qu’application enregistrée.   
 
+Exemple: **App Token** : Une application qui souhaite accéder aux informations d’API publiques peut utiliser son propre app token pour s’authentifier.
+
+### Bearer Token :
+  - Un bearer token est un jeton de type « porteur », souvent utilisé pour authentifier un utilisateur spécifique.
+  - Il est généralement émis suite à une authentification réussie (par exemple, après que l'utilisateur ait entré ses identifiants), souvent sous la forme de JSON Web Token (JWT).
+  - Le bearer token est utilisé dans les requêtes HTTP pour accéder à des ressources restreintes, en incluant le jeton dans l'en-tête d’autorisation avec le format Authorization: Bearer <token>.
+  - Un bearer token accorde l'accès aux ressources en fonction des autorisations de l'utilisateur, et non de l'application seule.
+
+Exemple: **Bearer Token** : Une application React qui utilise une API pour récupérer des données utilisateurs après connexion demandera un bearer token pour chaque utilisateur, car il identifie cet utilisateur de manière sécurisée.
+
+### Refresh Token :
+  - But : Il est utilisé pour obtenir un nouveau App token sans nécessiter de nouvelle connexion de l’utilisateur. Lorsque l'App token expire, l'application utilise le refresh token pour en générer un nouveau.
+  - Durée de Vie : Sa durée de vie est plus longue (parfois plusieurs heures, jours ou semaines) car il permet de prolonger la session utilisateur sans réauthentification.
+  - Exposition : Contrairement à l'App token, le refresh token n’est pas envoyé dans chaque requête à l’API. Il est conservé dans un stockage sécurisé, comme un cookie httpOnly ou le stockage sécurisé de l'appareil, pour éviter tout accès non autorisé.
+
+Exemple: Dans une application React, le App token est utilisé dans chaque requête API jusqu'à ce qu’il expire. Si l’API retourne une erreur d’expiration (401 Unauthorized), l'application envoie le **refresh token** pour obtenir un nouveau App token et réessaye la requête.
 
 ## Sécurité des JWT
 
@@ -86,10 +107,16 @@ console.log(token);
 ![Fonctionnement](assets/images/JWT_guide/exemple-login.jpg)
 
 
+
+
+
 ## Conclusion
   
 Les JWT sont un outil puissant pour l'authentification et l'échange sécurisé de données, mais ils doivent être utilisés avec prudence pour éviter des failles de sécurité. Prenez soin de toujours protéger vos tokens et de suivre les meilleures pratiques en matière de sécurité.  
 [JWT Security Best Practices - Auth0](https://auth0.com/docs/secure/tokens/token-best-practices)
+
+
+
 
 
 ## Tableaux

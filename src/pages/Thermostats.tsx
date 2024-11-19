@@ -1,24 +1,24 @@
-import { Button, View, Text , StyleSheet, TouchableOpacity, Image, Alert} from 'react-native'
-import React from 'react'
+import { Button, View, Text, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
+import React, { useContext } from 'react';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-{/*const Thermostats = ({ navigation }) => { */}
+import { AuthContext } from '../context/AuthContext'; // Importez AuthContext
 
 type RootStackParamList = {
-  Thermostats: { username: string }; // Déclarez ici les paramètres que vous attendez dans la page Thermostats
+  Thermostats: { username: string };
 };
 
 type ThermostatsScreenRouteProp = RouteProp<RootStackParamList, 'Thermostats'>;
 
 const Thermostats = () => {
-  const route = useRoute<ThermostatsScreenRouteProp>(); // Récupérer les paramètres de la page précédente
-  const navigation = useNavigation(); 
+  const route = useRoute<ThermostatsScreenRouteProp>();
+  const navigation = useNavigation();
+  const { handleLogout } = useContext(AuthContext);
 
-  const { username } = route.params ||{ username: 'utilisateur inconnu'}; // Récupérer le nom d'utilisateur de la page précédente
+  const { username } = route.params || { username: 'utilisateur inconnu' };
   
-  const thermostatId = '1392250'
-  const thermostatName = 'bain'
+  const thermostatId = '1392250';
+  const thermostatName = 'Salle de Bain';
 
   const handlePress = () => {
     Alert.alert(
@@ -27,7 +27,7 @@ const Thermostats = () => {
       [
         {
           text: 'Annuler',
-          onPress: () => console.log('Annulé'),
+          onPress: () => console.log(`Suppression du ${thermostatName} avec l'ID: ${thermostatId} Annulé`),
           style: 'cancel',
         },
         {
@@ -35,13 +35,33 @@ const Thermostats = () => {
           onPress: () => {
             console.log('Supprimé');
             // Placez ici la logique de suppression
-            // Par exemple, navigation.navigate('Thermostats') ou une autre action
           },
         },
       ],
-      { cancelable: true } // Optionnel : empêche de fermer l'alerte en appuyant en dehors de celle-ci
+      { cancelable: true }
     );
   };
+
+  const handleLogoutPress = async () => {
+    await handleLogout();
+    navigation.navigate('Login');
+  };
+
+    // Liste des thermostats
+    const thermostatList = [
+      { id: '1', name: 'Salle de Bain' },
+      { id: '2', name: 'Thermostat 2' },
+      { id: '3', name: 'Thermostat 3' },
+      { id: '4', name: 'Thermostat 4' },
+      { id: '5', name: 'Thermostat 5' },
+    ];
+  
+    const renderItem = ({ item }: { item: { name: string} }) => (
+      <View style={styles.item}>
+        <Text style={styles.itemText}>{item.name}</Text>
+      </View>
+    );
+
 
   return (
     <View style={styles.container}>
@@ -59,31 +79,36 @@ const Thermostats = () => {
             <Text style={styles.headerReglage}>| RÉGLAGES</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.headerRight}>
-          <Text style={styles.headerBienvenue}>Bienvenue, { username }</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <View style={styles.headerText}>
+          <TouchableOpacity onPress={handleLogoutPress}>
             <Text style={styles.headerDeconnection}>| Se déconnecter</Text>
           </TouchableOpacity>
         </View>
+        
         {/* Barre horizontale sous le header */}
-        <View style={styles.headerBar1}/>
-        <View style={styles.headerBar2}/>
+        <View style={styles.headerBar1} />
+        <View style={styles.headerBar2} />
+        <View>
+        <View >
+          <Text style={styles.headerBienvenue}>Bienvenue, {username}</Text>
+        </View>
       </View>
+      </View>
+
       <View style={styles.thermostatsContainer}>
-        
-          <Image source={require('../assets/images/Thermostats-23.5.png')}/>
-        
+        <Image source={require('../assets/images/Thermostats-23.5.png')} style={styles.thermostatImage} />
         <View style={styles.infoThermostats}>
-          <View style={styles.nomDelete} >
+          <View style={styles.nomDelete}>
             <Text style={styles.text}>{thermostatName}</Text>
             <TouchableOpacity onPress={handlePress}>
               <Icon name="trash" size={30} color="#bababa" />
             </TouchableOpacity>
           </View>
-          <View style={styles.barre}/>
-          <View style={styles.nomDelete} >
+          <View style={styles.barre} />
+          <View style={styles.nomDelete}>
             <Text style={styles.text}>
-              ID Thermostat: <Text>{thermostatId}</Text></Text>
+              ID Thermostat: <Text>{thermostatId}</Text>
+            </Text>
           </View>
         </View>
       </View>
@@ -94,7 +119,7 @@ const Thermostats = () => {
         <Text style={styles.footerText} >Version: 1.01</Text>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -131,13 +156,16 @@ const styles = StyleSheet.create({
   },
   headerRight:{
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 35,
+    //marginRight: 155,
+    marginLeft: -90,
   },
   headerBienvenue:{
+    marginTop: 55,
     marginRight: 5,
     fontSize: 10,
     fontWeight: 'bold',
-  },
+    },
   headerDeconnection: {
     fontSize: 10,
     fontWeight: 'bold',
@@ -145,10 +173,10 @@ const styles = StyleSheet.create({
   headerBar1: {
     height: 4,
     backgroundColor: '#F78D1F',
-    width: '82%',
+    width: '100%',
     marginTop: 25,
-    marginLeft: -365,
-    marginRight: -10,
+    marginLeft: -265,
+
   },
   headerBar2: {
     height: 6,
@@ -156,12 +184,17 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 50,
     marginLeft: -440,
+    marginRight: -200,
   },
   thermostatsContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: -800,
+    marginTop: -420,
+  },
+  thermostatImage: {
+    width: 150, // Largeur désirée
+    height: 250, // Hauteur désirée
   },
   infoThermostats: {
     width: '100%',
@@ -209,6 +242,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginTop: -5,
   },
+    // Styles pour la liste
+
 });
 
 export default Thermostats

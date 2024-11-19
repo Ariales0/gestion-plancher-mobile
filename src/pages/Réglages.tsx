@@ -28,11 +28,11 @@ const Réglages = ({ navigation }) => {
         <View style={styles.inputContainer}>
           <View style={styles.inputEspacement}>
             <TextInput style={styles.input} placeholder="Prénom" />
-            <Text style={styles.textUnderInput}>*Prénom</Text>
+            <Text style={styles.textUnderInput}>Prénom</Text>
           </View>
           <View style={styles.inputEspacement}>
             <TextInput style={[styles.input]} placeholder="Nom de famille" />
-            <Text style={styles.textUnderInput}>*Nom de famille</Text>
+            <Text style={styles.textUnderInput}>Nom de famille</Text>
           </View>
         </View>
         <View style={styles.inputContainer}>
@@ -51,7 +51,7 @@ const Réglages = ({ navigation }) => {
             <Text style={styles.textUnderInput}>État/Province</Text>
           </View>
           <View style={styles.inputEspacement}>
-            <TextInput style={[styles.input]} placeholder="Code postal/Zip" />
+            <TextInput style={[styles.input]} placeholder="Z2X 1Y3" />
             <Text style={styles.textUnderInput}>Code postal/Zip</Text>
           </View>
         </View>
@@ -62,16 +62,27 @@ const Réglages = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.inputContainer}>
-          <View style={[styles.inputEspacement, styles.input50]}>
+          <View style={styles.inputEspacement}>
             <TextInput style={styles.input} placeholder="Courriel" />
-            <Text style={styles.textUnderInput}>*Courriel</Text>
+            <Text style={styles.textUnderInput}>Courriel</Text>
+          </View>
+          <View style={styles.inputEspacement}>
+            <TextInput style={[styles.input]} placeholder="Mot de passe" />
+            <Text style={styles.textUnderInput}>Mot de passe</Text>
           </View>
         </View>
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={() => navigation.navigate('Thermostats')}>
-          <Text style={styles.buttonText}>Sauvegarder</Text>
-        </TouchableOpacity>
+        <View style={styles.boutonChoix}>
+          <TouchableOpacity 
+            style={[styles.button, {marginRight: 10}]}
+            onPress={() => navigation.navigate('Thermostats')}>
+            <Text style={styles.buttonText}>Sauvegarder</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.buttonGris}
+            onPress={() => navigation.navigate('Thermostats')}>
+            <Text style={styles.buttonText}>Annuler</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     
     {/* Footer */}
@@ -126,7 +137,6 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     width: '80%',
-    marginTop: 10,
     },
   inputContainer:{
     flexDirection: 'row',
@@ -136,9 +146,6 @@ const styles = StyleSheet.create({
     flex: 1, 
     marginLeft: 10 , 
     marginBottom: 40
-  },
-  input50:{
-    width: '50%',
   },
   input: {
     flex: 1,
@@ -155,10 +162,15 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   textUnderInput: {
-    fontSize: 14,
+    fontSize: 10,
     fontWeight: 'bold',
     color: '#555',
     marginTop: -12, 
+  },
+  boutonChoix: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: 10,
   },
   button: {
     backgroundColor: '#F78D1F',
@@ -166,8 +178,18 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     width: '50%',
-    marginLeft: 10
+    marginLeft: 10,
+    marginTop: 30
   },
+  buttonGris: {
+    backgroundColor: '#c8c8c8', 
+    color: '#FFF',
+    padding: 10,
+    borderRadius: 5,
+    width: '48%',
+    marginTop: 30
+  },
+
   buttonText: {
     color: '#FFF',
     textAlign: 'center',

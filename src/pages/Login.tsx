@@ -1,39 +1,48 @@
-import React, { useState } from 'react'
-import { Button, View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Dimensions, Alert} from 'react-native'
+import React, { useState, useEffect, useContext  } from 'react';
+import { Button, View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Dimensions, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Colors } from 'react-native/Libraries/NewAppScreen'; 
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Permet de stocker des données dans le courriel et préférences de l'utilisateur
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { loginUser } from '../services/api'; // Importez la fonction loginUser
+import { AuthContext } from '../context/AuthContext'; // Importez votre AuthContext
 
-const Login = ({ navigation }) => {
 
-  // États pour les champs de saisie
+const Login = () => {
+  const navigation = useNavigation();
+  const { authState } = useContext(AuthContext); // Récupérez l'état d'authentification depuis le contexte
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  // Réinitialiser les champs si l'utilisateur se déconnecte
+  useEffect(() => {
+    if (!authState) {
+      setUsername('');
+      setPassword('');
+    }
+  }, [authState]);
+
 
   // Fonction pour vérifier les informations de connexion
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://192.168.56.1:5000/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await loginUser({ Email: username, Password: password }); // Appel à la fonction loginUser
 
-      const data = await response.json();
-      console.log('Login response:', data);
+      // Console logs pour vérifier la réponse de l'API et les informations de connexion
+      //console.log('Login response:', response);
+      //console.log('Tentative de connexion avec:', { username, password });
+      //console.log('Réponse de l\'API:', response);
 
-      if (response.ok) {
+      if (response.token) { // Assurez-vous que la réponse contient le token
         // Stocker le jeton d'authentification dans le stockage sécurisé
-        await AsyncStorage.setItem('token',data.token);
-        // Naviguer vers la page Thermostats
-        navigation.navigate('Thermostats', { username});
+        await AsyncStorage.setItem('token', response.token);
+        await AsyncStorage.setItem('username', username);
+        navigation.navigate('Thermostats', { username });
       } else {
-        Alert.alert('Erreur', data.msg);
+        Alert.alert('Erreur', response.msg || 'Identifiants incorrects.');
       }
     } catch (error) {
-      Alert.alert('Erreur', 'une erreur est survenue.');
+      Alert.alert('Erreur', 'Une erreur est survenue, vérifier vos données saisies.');
+      console.error(error); 
     }
   };
 
@@ -42,30 +51,36 @@ const Login = ({ navigation }) => {
       {/* Banner */}
       <View style={styles.banner}>
         <Image source={require('../assets/images/Banner.png')} 
-        style={styles.bannerImage}
-        resizeMode='contain'/>
+          style={styles.bannerImage}
+          resizeMode='contain' />
       </View>
       <View style={styles.loginContainer}>
-        <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 4}}>Veuillez vous connecter avec votre compte.</Text>
+        <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 4 }}>Veuillez vous connecter avec votre compte.</Text>
         <View style={styles.inputContainer}>
-          <TextInput style={styles.input} placeholder="Saissisez votre nom d'utilisateur" value={username} onChangeText={setUsername}/>
-          <TextInput style={styles.input} placeholder="Saissisez votre mot de passe"  secureTextEntry value={password} onChangeText={setPassword}/>
+          <TextInput style={styles.input} placeholder="Saissisez votre nom d'utilisateur" value={username} onChangeText={setUsername} />
+          <TextInput style={styles.input} placeholder="Saissisez votre mot de passe" secureTextEntry value={password} onChangeText={setPassword} />
         </View>
-        {/* <button title="Identifiant" onPress={() => navigation.navigate('Thermostats')} /> */}
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={handleLogin}>
-          { /* onPress={() => navigation.navigate('Thermostats')}> */}
-          <Text style={styles.buttonText}>Identifiant</Text>
-        </TouchableOpacity>
-      </View>
-        {/* Footer */}
-        <View style={styles.footer}>
-            <View style={styles.topbar}/>
-          <Text style={styles.footerText} >Version: 1.01</Text>
+        <View style={styles.boutonChoix}>
+          <TouchableOpacity 
+            style={[styles.button, {marginRight: 10}]}
+            onPress={handleLogin}>
+            <Text style={styles.buttonText}>Identifiant</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.buttonRegister}
+            onPress={() => navigation.navigate('Register')}>
+            <Text style={styles.buttonText}>Créer un compte</Text>
+          </TouchableOpacity>
         </View>
+
       </View>
-  )
+      {/* Footer */}
+      <View style={styles.footer}>
+        <View style={styles.topbar} />
+        <Text style={styles.footerText}>Version: 1.01</Text>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -89,15 +104,21 @@ const styles = StyleSheet.create({
     resizeMode: 'cover', // Ajuste l'image pour couvrir toute la bannière
   },
   loginContainer: {
-    height: 800,
+    height: 600,
     width: '75%',
     alignContent: 'center',
     justifyContent: 'center',
   },
+
+  boutonChoix: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: 10,
+  },
   inputContainer:{
   },
   input: {
-    fontSize: 16,
+    fontSize: 15,
     borderRadius: 5,
     borderWidth: 2,
     borderColor: '#e2e2e2',
@@ -106,7 +127,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: '#F78D1F',
+    backgroundColor: '#F78D1F', 
+    color: '#FFF',
+    padding: 10,
+    borderRadius: 5,
+    width: '50%',
+    marginTop: 30
+  },
+  buttonRegister: {
+    backgroundColor: '#c8c8c8', 
     color: '#FFF',
     padding: 10,
     borderRadius: 5,
@@ -116,7 +145,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFF',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 13,
+    height: 22,
   },
   item: {
     fontSize: 24, 
@@ -150,4 +180,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login
+export default Login;
