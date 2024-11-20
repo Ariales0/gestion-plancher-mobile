@@ -15,6 +15,7 @@ export default function App() {
   const [client, setClient] = useState<Paho.Client | null>(null); // Client MQTT
 
   useEffect(() => {
+    //const newClient = new Paho.Client('172.16.5.201', 1883, 'applicationNative');
     const newClient = new Paho.Client('172.16.5.201', 9001, 'applicationNative');
 
     newClient.onConnectionLost = (responseObject) => {

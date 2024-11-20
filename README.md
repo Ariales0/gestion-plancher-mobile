@@ -49,6 +49,13 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
    git clone https://github.com/votre-utilisateur/gestion-plancher-mobile.git
    cd gestion-plancher-mobile
   ```
+1. **Changer la configucation de API_CONFIG**
+  - Aller dans le fichier API_CONFIG.js localisé /src/config/API_CONFIG .js
+  ```bash
+  URL: 'http://172.16.7.106', // Remplacez {{URL}} par l'URL réelle
+  ```
+  Ouvrir un terminal et faire (sous windows) ipconfig et votre {{URL}} sera votre Adresse IPv4  
+
 2. Créer un nouveau projet avec Expo (optionnel) :
   ```bash
   npx create-expo-app gestion-plancher-mobile -t
@@ -64,19 +71,21 @@ React DevTools est un outil indispensable pour déboguer vos composants React Na
   ```bash
 npm install -g react-devtools
   ```
-
 5. Démarrer le serveur Expo :  
   ```bash
   npx expo start
   ```
-
 6. Lancer sur un Appareil ou un Émulateur  
-Pour exécuter l'application sur un appareil Android, utilisez :  
+Pour exécuter l'application sur un appareil Android, Scanner le code QR au besoin ou utilisez :  
+
   ```bash
+  npm start
+  ```
+  ou
+    ```bash
   npm run android
   ```
-
-
+  Choisir a dans le menu pour  Press a │ open Android   
 
 ## Commandes Importantes
 

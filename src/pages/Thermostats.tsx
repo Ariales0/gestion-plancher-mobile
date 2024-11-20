@@ -1,5 +1,5 @@
 import { Button, View, Text, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { AuthContext } from '../context/AuthContext'; // Importez AuthContext
@@ -10,7 +10,7 @@ type RootStackParamList = {
 
 type ThermostatsScreenRouteProp = RouteProp<RootStackParamList, 'Thermostats'>;
 
-const Thermostats = () => {
+  const Thermostats = () => {
   const route = useRoute<ThermostatsScreenRouteProp>();
   const navigation = useNavigation();
   const { handleLogout } = useContext(AuthContext);
@@ -72,10 +72,10 @@ const Thermostats = () => {
           resizeMode='contain'
         />
         <View style={styles.headerText}>
-          <TouchableOpacity onPress={() => navigation.navigate('Thermostats')}>
+          <TouchableOpacity onPress={() => navigation.navigate('interfaceThermost')}>
             <Text style={styles.headerThermostats}>THERMOSTATS</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Réglages')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Reglages')}>
             <Text style={styles.headerReglage}>| RÉGLAGES</Text>
           </TouchableOpacity>
         </View>

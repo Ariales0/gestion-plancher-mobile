@@ -25,7 +25,7 @@ const Login = () => {
   // Fonction pour vérifier les informations de connexion
   const handleLogin = async () => {
     try {
-      const response = await loginUser({ Email: username, Password: password }); // Appel à la fonction loginUser
+      const response = await loginUser({ email: username, password: password }); // Appel à la fonction loginUser
 
       // Console logs pour vérifier la réponse de l'API et les informations de connexion
       //console.log('Login response:', response);
@@ -36,7 +36,7 @@ const Login = () => {
         // Stocker le jeton d'authentification dans le stockage sécurisé
         await AsyncStorage.setItem('token', response.token);
         await AsyncStorage.setItem('username', username);
-        navigation.navigate('Thermostats', { username });
+        navigation.navigate('Thermostat', { username });
       } else {
         Alert.alert('Erreur', response.msg || 'Identifiants incorrects.');
       }
@@ -46,6 +46,7 @@ const Login = () => {
     }
   };
 
+  // Affichage de la page de connexion
   return (
     <View style={styles.container}>
       {/* Banner */}
@@ -83,6 +84,7 @@ const Login = () => {
   );
 }
 
+// Styles de la page de connexion
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -56,7 +56,7 @@ const User = sequelize.define('User', {
   Status: { 
     type: DataTypes.BOOLEAN, 
     allowNull: false, 
-    defaultValue: false // tu peux mettre une valeur par défaut
+    defaultValue: true // tu peux mettre une valeur par défaut
   }
 }, {
   tableName: 'Users', // Assure-toi que le nom de la table est correct
