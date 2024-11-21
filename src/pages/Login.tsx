@@ -24,6 +24,11 @@ const Login = () => {
 
   // Fonction pour vérifier les informations de connexion
   const handleLogin = async () => {
+    if (!username || !password) {
+      Alert.alert('Erreur', 'Veuillez saisir votre nom d\'utilisateur et votre mot de passe.');
+      return;
+    }
+    
     try {
       const response = await loginUser({ email: username, password: password }); // Appel à la fonction loginUser
 

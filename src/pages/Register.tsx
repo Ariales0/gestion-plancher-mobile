@@ -52,7 +52,7 @@ const Register = () => {
       Alert.alert('Erreur', errorMessage); // Affiche le message d'erreur
     }
   };
-  
+
 
   return (
     <View style={styles.container}>

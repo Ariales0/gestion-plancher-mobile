@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AuthProvider } from '../context/AuthContext';  
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import Thermostats from '../pages/Thermostats';
 import Reglages from '../pages/Reglages';
 import Mqtt from '../pages/Mqtt';
 import Thermostat from '../pages/Thermostat';
@@ -20,7 +19,6 @@ const Routes = () => {
           <Stack.Screen name="Mqtt" component={Mqtt} options={{ title: 'Mqtt' }} />
           <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
           <Stack.Screen name="Register" component={Register} options={{ title: 'Créer un compte' }} />
-          <Stack.Screen name="Thermostats" component={Thermostats} options={{ title: 'Thermostats' }} />
           <Stack.Screen name="Reglages" component={Reglages} options={{ title: 'Reglages' }} />
           <Stack.Screen name="Thermostat" component={Thermostat} options={{ title: 'Thermostat' }} />
         </Stack.Navigator>
