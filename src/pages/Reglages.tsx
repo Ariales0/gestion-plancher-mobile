@@ -183,11 +183,6 @@ const Réglages = () => {
               >
                 <Text style={styles.buttonText}>Sauvegarder</Text>
               </TouchableOpacity>
-
-
-
-
-
               <TouchableOpacity
                 style={styles.buttonGris}
                 onPress={() => navigation.navigate('Thermostat')}

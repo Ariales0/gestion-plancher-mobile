@@ -2,6 +2,7 @@ import { Button, View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Ale
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { registerUser } from '../services/api'; // Importer la fonction registerUser
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Register = () => {
   const navigation = useNavigation();
@@ -13,39 +14,45 @@ const Register = () => {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zip, setZip] = useState('');
-  const [country, setCountry] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [type, setType] = useState('user');
+  const [status, setStatus] = useState('true');
 
   // Fonction pour gérer l'enregistrement de l'utilisateur
   const handleRegister = async () => {
+    if (!firstName || !lastName || !address || !city || !state || !zip || !email || !password) {
+      Alert.alert("Erreur", "Tous les champs sont requis.");
+      return;
+    }
+  
     const userData = {
-      FirstName: firstName,
-      LastName: lastName,
-      Address: address,
-      City: city,
-      State: state,
-      Zip: zip,
-      Country: country,
-      Email: email,
-      Password: password,
+      first_name: firstName,
+      last_name: lastName,
+      address: address,
+      city: city,
+      state: state,
+      zip: zip,
+      email: email,
+      password: password,
+      type: 'user', // Le type est défini ici
+      status: true,  // Le statut est activé (true) par défaut
     };
-
+  
     try {
       const response = await registerUser(userData);
       Alert.alert('Succès', response.message);
-      navigation.navigate('Thermostats');
+      await AsyncStorage.setItem('username', email);
+      navigation.navigate('Thermostat', { username: email });
     } catch (error) {
       console.error('Erreur d\'enregistrement:', error);
-      // Vérifie si error.response existe pour extraire le message d'erreur
       const errorMessage = error.response && error.response.data && error.response.data.error
         ? error.response.data.error
         : 'Erreur lors de l\'enregistrement.';
-      
       Alert.alert('Erreur', errorMessage); // Affiche le message d'erreur
     }
-    
   };
+  
 
   return (
     <View style={styles.container}>
@@ -135,7 +142,6 @@ const Register = () => {
             <Text style={styles.textUnderInput}>Code postal/Zip</Text>
           </View>
         </View>
-
 
 
         {/* Champ Courriel et Mot de passe */}
