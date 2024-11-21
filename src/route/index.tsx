@@ -15,7 +15,7 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <AuthProvider>
-        <Stack.Navigator /*screenOptions={{headerShown: false}}*/ initialRouteName="Login">
+        <Stack.Navigator /*screenOptions={{headerShown: false}}*/ initialRouteName="Mqtt">
           <Stack.Screen name="Mqtt" component={Mqtt} options={{ title: 'Mqtt' }} />
           <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
           <Stack.Screen name="Register" component={Register} options={{ title: 'Créer un compte' }} />

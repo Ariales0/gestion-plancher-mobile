@@ -47,7 +47,8 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
 1. **Cloner le dépôt :**
   ```bash
-   git clone https://github.com/votre-utilisateur/gestion-plancher-mobile.git
+   git clone https://github.com/Ariales0/gestion-plancher-mobile.git
+   
    cd gestion-plancher-mobile
   ```
 2. **Changer la configucation de API_CONFIG**

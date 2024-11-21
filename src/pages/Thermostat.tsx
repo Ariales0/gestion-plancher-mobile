@@ -32,7 +32,6 @@ const ThermostatInterface = () => {
     fetchUsername();
   }, []);
 
-
   const incrementTemperature = () => {
     setTemperature(prev => prev + 1);
   };
@@ -45,7 +44,6 @@ const ThermostatInterface = () => {
     await handleLogout();
     navigation.navigate('Login');
   };
-
 
   const handleDeleteRoom = () => {
     Alert.alert(
@@ -69,36 +67,65 @@ const ThermostatInterface = () => {
     );
   };
 
+  // Fonction pour ajouter une nouvelle room
+  const handleAddRoom = () => {
+    const newRoom = {
+      id: Math.random().toString(), // ID unique généré aléatoirement
+      name: `Nouvelle Pièce ${roomData.length + 1}`, // Nom par défaut
+      icon: '🌟', // Icône par défaut, vous pouvez la personnaliser
+    };
+    roomData.unshift(newRoom); // Ajouter la nouvelle room en première position
+    setActiveRoom(newRoom); // Définir la nouvelle room comme active
+  };
+
   // Diviser les rooms en pages de 10 (2 lignes de 5)
   const roomPages = [];
   for (let i = 0; i < roomData.length; i += 10) {
     roomPages.push(roomData.slice(i, i + 10));
   }
 
-  const renderRoomGrid = (rooms) => (
-    <View style={styles.roomGrid}>
-      {rooms.map((room) => (
-        <TouchableOpacity 
-          key={room.id}
-          style={[
-            styles.roomItem, 
-            activeRoom.id === room.id && styles.activeRoomItem
-          ]}
-          onPress={() => setActiveRoom(room)}
-        >
-          <Text style={styles.roomIcon}>{room.icon}</Text>
-          <Text style={[
-            styles.roomName, 
-            activeRoom.id === room.id && styles.activeRoomName
-          ]}>
-            {room.name}
-          </Text>
-        </TouchableOpacity>
-      ))}
-    </View>
-  );
+const renderRoomGrid = (rooms) => (
+  <View style={styles.roomGrid}>
+    {/* Le premier élément de la liste est un bouton pour ajouter une room */}
+    <TouchableOpacity 
+      style={[styles.roomItem, styles.addRoomButton]} 
+      onPress={() => {
+        // Ajouter une room vide ou par défaut
+        const newRoom = {
+          id: new Date().toISOString(), // Utilisation de l'ID basé sur la date pour la simplicité
+          name: 'Nouvelle Room', 
+          icon: '🛋️',  // Icône par défaut
+        };
+        // Ajoutez la nouvelle room au début de la liste
+        setRoomData([newRoom, ...roomData]);
+      }}
+    >
+      <Text style={styles.roomIcon}>+</Text>
+      <Text style={styles.roomName}>Ajouter une pièce</Text>
+    </TouchableOpacity>
 
-
+    {/* Affichage des rooms restantes */}
+    {rooms.map((room) => (
+      <TouchableOpacity 
+        key={room.id}
+        style={[
+          styles.roomItem, 
+          activeRoom.id === room.id && styles.activeRoomItem
+        ]}
+        onPress={() => setActiveRoom(room)}
+      >
+        <Text style={styles.roomIcon}>{room.icon}</Text>
+        <Text style={[
+          styles.roomName, 
+          activeRoom.id === room.id && styles.activeRoomName
+        ]}>
+          {room.name}
+        </Text>
+      </TouchableOpacity>
+    ))}
+  </View>
+);
+  
 
   return (
     <View style={styles.container}>
@@ -122,7 +149,7 @@ const ThermostatInterface = () => {
             <Text style={styles.headerDeconnection}>| Se déconnecter</Text>
           </TouchableOpacity>
         </View>
-        
+
         {/* Barre horizontale sous le header */}
         <View style={styles.headerBar1} />
         <View style={styles.headerBar2} />
@@ -134,12 +161,10 @@ const ThermostatInterface = () => {
       </View>
       {/* Fin Section Header */}
 
-
-
       {/* Liste des pièces */}
       <View style={styles.roomListContainer}>
         {renderRoomGrid(roomPages[currentPage])}
-        
+
         {/* Indicateur de page */}
         {roomPages.length > 1 && (
           <View style={styles.pageIndicatorContainer}>
@@ -186,14 +211,16 @@ const ThermostatInterface = () => {
           <View style={styles.triangleDown} />
         </TouchableOpacity>
       </View>
+
       {/* Footer */}
       <View style={styles.footer}>
-          <View style={styles.topbar}/>
-        <Text style={styles.footerText} >Version: 1.01</Text>
+        <View style={styles.topbar}/>
+        <Text style={styles.footerText}>Version: 1.01</Text>
       </View>
     </View>
   );
 };
+
 
 // Données de la liste (exemple)
 const roomData = [
@@ -204,9 +231,8 @@ const roomData = [
   { id: '5', name: 'Bureau', icon: '💻' },
   { id: '6', name: 'Garage', icon: '🚗' },
   { id: '7', name: 'Cave', icon: '🍷' },
-  { id: '8', name: 'Grenier', icon: '📦' },
+  { id: '8', name: 'Terrasse', icon: '☀️' },
   { id: '9', name: 'Jardin', icon: '🌳' },
-  { id: '10', name: 'Terrasse', icon: '☀️' },
 ];
 
 
@@ -309,7 +335,30 @@ const styles = StyleSheet.create({
 
 
 
-
+  roomItem: {
+    // Styles communs pour chaque room
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: '#ddd',
+    backgroundColor: '#f9f9f9', // Couleur de fond par défaut
+  },
+  addRoomButton: {
+    // Styles spécifiques pour le bouton d'ajout
+    backgroundColor: '#d4edda', // Vert pâle (#d4edda est une couleur de fond vert pâle)
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#c3e6cb',  // Un bord légèrement plus foncé pour contraster
+  },
+  roomIcon: {
+    fontSize: 30,
+    marginBottom: 5,
+  },
+  roomName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
   roomListContainer: {
     paddingVertical: 10,
   },

@@ -52,4 +52,38 @@ export const fetchUserData = async (email) => {
   }
 };
 
+// Fonction pour obtenir un token d'application
+export const getAppToken = async (loginData) => {
+  try {
+    // Envoi de la requête avec les données d'authentification
+    const response = await axios.post(`${API_URL}/users/getAppToken`, loginData);
+    console.log('App token received:', response.data);
+    return response.data; // Vous pouvez utiliser ce token dans les requêtes suivantes
+  } catch (error) {
+    // Gestion d'erreur
+    console.error('Error getting app token:', error.response ? error.response.data : error.message);
+    throw error;
+  }
+};
+
+// Fonction pour obtenir tous les utilisateurs en utilisant l'appToken
+export const getAllUsers = async (appToken) => {
+  try {
+    // Envoi de la requête avec l'appToken dans les en-têtes
+    const response = await axios.get(`${API_URL}/users/getAll`, {
+      headers: {
+        'Authorization': `Bearer ${appToken}`, // Ajouter l'appToken dans l'en-tête
+      },
+    });
+
+    console.log('Users received:', response.data);
+    return response.data; // Retourner la liste des utilisateurs
+  } catch (error) {
+    // Gestion d'erreur
+    console.error('Error getting users:', error.response ? error.response.data : error.message);
+    throw error;
+  }
+};
+
+
 
