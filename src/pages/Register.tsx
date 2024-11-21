@@ -136,18 +136,7 @@ const Register = () => {
           </View>
         </View>
 
-        {/* Champ Pays */}
-        <View style={styles.inputContainer}>
-          <View style={styles.inputEspacement}>
-            <TextInput 
-              style={styles.input} 
-              placeholder="Pays" 
-              value={country} // Lier l'état
-              onChangeText={setCountry} // Mettre à jour l'état
-            />
-            <Text style={styles.textUnderInput}>Pays</Text>
-          </View>
-        </View>
+
 
         {/* Champ Courriel et Mot de passe */}
         <View style={styles.inputContainer}>

@@ -190,7 +190,7 @@ const Réglages = () => {
 
               <TouchableOpacity
                 style={styles.buttonGris}
-                onPress={() => navigation.navigate('Thermostats')}
+                onPress={() => navigation.navigate('Thermostat')}
               >
                 <Text style={styles.buttonText}>Annuler</Text>
               </TouchableOpacity>

@@ -39,6 +39,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
 - [Android Studio](https://developer.android.com/studio?hl=fr) (si vous utilisez un émulateur Android)
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [Github Desktop](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)
 
 ---
 
@@ -49,35 +50,34 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
    git clone https://github.com/votre-utilisateur/gestion-plancher-mobile.git
    cd gestion-plancher-mobile
   ```
-1. **Changer la configucation de API_CONFIG**
+2. **Changer la configucation de API_CONFIG**
   - Aller dans le fichier API_CONFIG.js localisé /src/config/API_CONFIG .js
+  - Remplacez l'URL par votre adresse IPv4 locale pour connecter l'application à votre API.
   ```bash
-  URL: 'http://172.16.7.106', // Remplacez {{URL}} par l'URL réelle
+  URL: 'http://172.16.7.106', // Remplacez {{URL}} par l'URL réelle pour se connecter à l'API
   ```
   Ouvrir un terminal et faire (sous windows) ipconfig et votre {{URL}} sera votre Adresse IPv4  
+| Action                               | Windows (ipconfig) | Linux (moderne : ip) | Linux (ancien : ifconfig) | macOS      |
+|--------------------------------------|---------------------|-----------------------|----------------------------|------------|
+| Afficher toutes les configurations réseau | ipconfig            | ip addr               | ifconfig                   | ifconfig   |
 
-2. Créer un nouveau projet avec Expo (optionnel) :
+4. Installer les dépendances :
   ```bash
-  npx create-expo-app gestion-plancher-mobile -t
+  npm install
   ```
-3. Installer les dépendances :
-  ```bash
-  npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
-  npm install react-native-vector-icons --save
-  npm install --save-dev typescript@~5.3.3
-  ```
-4. Installer React DevTools   
+5. Installer React DevTools   
 React DevTools est un outil indispensable pour déboguer vos composants React Native. Installez-le avec :   
   ```bash
 npm install -g react-devtools
   ```
-5. Démarrer le serveur Expo :  
+6. Démarrer le serveur Expo :  
+  - Pour exécuter l'application sur un appareil Android ou un émulateur :
   ```bash
   npx expo start
   ```
-6. Lancer sur un Appareil ou un Émulateur  
-Pour exécuter l'application sur un appareil Android, Scanner le code QR au besoin ou utilisez :  
+  - Scannez le QR code affiché dans le terminal avec l'application Expo Go sur votre appareil.
 
+7. Lancer sur un Appareil ou un Émulateur  
   ```bash
   npm start
   ```
